@@ -1,0 +1,158 @@
+<style>
+.wrap{padding:1rem 0 2rem;max-width:680px}
+.section-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;color:var(--color-text-tertiary);margin-bottom:0.6rem}
+.post-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.4rem;margin-bottom:1.5rem}
+.post-header{display:flex;align-items:center;gap:10px;margin-bottom:1rem;padding-bottom:0.85rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+.avatar{width:40px;height:40px;border-radius:50%;background:#0A1628;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#1AAF5D;flex-shrink:0}
+.page-name{font-size:14px;font-weight:500;color:var(--color-text-primary);line-height:1.2}
+.page-meta{font-size:12px;color:var(--color-text-tertiary)}
+.post-body{font-size:14px;color:var(--color-text-primary);line-height:1.75;white-space:pre-wrap}
+.post-body .hook{font-weight:500;color:var(--color-text-primary)}
+.post-body .emoji-line{letter-spacing:0.5px}
+.post-image-placeholder{background:var(--color-background-secondary);border:0.5px dashed var(--color-border-secondary);border-radius:var(--border-radius-md);height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin:1rem 0;color:var(--color-text-tertiary)}
+.post-image-placeholder i{font-size:28px}
+.post-image-placeholder span{font-size:12px}
+.post-reactions{display:flex;align-items:center;gap:6px;padding-top:0.75rem;border-top:0.5px solid var(--color-border-tertiary);margin-top:0.75rem}
+.react-pill{font-size:12px;color:var(--color-text-secondary);background:var(--color-background-secondary);padding:3px 10px;border-radius:20px;border:0.5px solid var(--color-border-tertiary)}
+
+.anatomy{margin-bottom:2rem}
+.anatomy-row{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}
+.anatomy-num{width:24px;height:24px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.anatomy-content{}
+.anatomy-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+.anatomy-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.anatomy-example{font-size:12px;color:var(--color-text-info);font-style:italic;margin-top:3px}
+
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem}
+.tip-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.75rem 0.9rem}
+.tip-icon{font-size:18px;color:var(--color-text-secondary);margin-bottom:6px}
+.tip-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:3px}
+.tip-desc{font-size:11px;color:var(--color-text-secondary);line-height:1.5}
+
+.cta-bar{background:var(--color-background-success);border-radius:var(--border-radius-md);padding:0.75rem 1rem;display:flex;align-items:center;gap:10px}
+.cta-bar i{font-size:18px;color:var(--color-text-success)}
+.cta-bar span{font-size:13px;color:var(--color-text-success);line-height:1.5}
+</style>
+
+<div class="wrap">
+
+<div class="section-label">Post anatomy</div>
+<div class="anatomy">
+  <div class="anatomy-row">
+    <div class="anatomy-num">1</div>
+    <div class="anatomy-content">
+      <div class="anatomy-title">Hook (line 1 — the most important)</div>
+      <div class="anatomy-desc">Stop the scroll. Ask a question, make a bold claim, or reveal a surprising number. Must work without an image.</div>
+      <div class="anatomy-example">"Most people will work 40 years and still retire broke. Here's the one thing they skipped…"</div>
+    </div>
+  </div>
+  <div class="anatomy-row">
+    <div class="anatomy-num">2</div>
+    <div class="anatomy-content">
+      <div class="anatomy-title">Body — value delivery (3–7 points)</div>
+      <div class="anatomy-desc">Use short lines, emojis as bullets, and white space. Each point = one idea. No walls of text.</div>
+      <div class="anatomy-example">"✅ Needs: 50% (rent, food, bills)&#10;✅ Wants: 30% (fun, dining out)&#10;✅ Savings: 20% (invest + emergency fund)"</div>
+    </div>
+  </div>
+  <div class="anatomy-row">
+    <div class="anatomy-num">3</div>
+    <div class="anatomy-content">
+      <div class="anatomy-title">Bridge — make it personal</div>
+      <div class="anatomy-desc">One sentence that connects the info to the reader's life. Builds trust and relatability.</div>
+      <div class="anatomy-example">"This simple split changed how I look at every paycheck."</div>
+    </div>
+  </div>
+  <div class="anatomy-row">
+    <div class="anatomy-num">4</div>
+    <div class="anatomy-content">
+      <div class="anatomy-title">Call to action (CTA)</div>
+      <div class="anatomy-desc">Always end with an action. Comment, save, share, or tag someone. One CTA only — never stack multiple.</div>
+      <div class="anatomy-example">"Which bucket do you struggle with most? Drop it in the comments 👇"</div>
+    </div>
+  </div>
+  <div class="anatomy-row">
+    <div class="anatomy-num">5</div>
+    <div class="anatomy-content">
+      <div class="anatomy-title">Hashtags (3–5 max on Facebook)</div>
+      <div class="anatomy-desc">Keep them relevant and not spammy. Facebook penalizes heavy hashtag use unlike Instagram.</div>
+      <div class="anatomy-example">#MoneyMuse #PersonalFinance #BudgetingTips</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Sample post — 50/30/20 rule</div>
+<div class="post-card">
+  <div class="post-header">
+    <div class="avatar">MM</div>
+    <div>
+      <div class="page-name">Money Muse</div>
+      <div class="page-meta">Just now · <i class="ti ti-world" style="font-size:12px;vertical-align:-1px" aria-hidden="true"></i> Public</div>
+    </div>
+  </div>
+  <div class="post-body"><span class="hook">Nobody taught you how to manage money in school. So here's what they should have.</span>
+
+The 50/30/20 rule is the simplest budgeting system in the world — and it works on any income.
+
+Here's how it works 👇
+
+<span class="emoji-line">🏠 50% → NEEDS</span>
+Rent, groceries, utilities, transport.
+The things you literally can't skip.
+
+<span class="emoji-line">🎉 30% → WANTS</span>
+Dining out, subscriptions, shopping.
+Enjoy your life — but cap it here.
+
+<span class="emoji-line">💰 20% → SAVINGS & INVESTMENTS</span>
+Emergency fund, retirement, investments.
+Pay yourself first. Always.
+
+The magic? You don't have to track every single dollar.
+Just split your paycheck into these 3 buckets — and you're already ahead of 80% of people.
+
+Start this month. Even $50 in savings beats $0.
+
+Which bucket is hardest for you to stick to? Comment below 👇
+
+#MoneyMuse #BudgetingTips #PersonalFinance #FinancialFreedom</div>
+  <div class="post-image-placeholder">
+    <i class="ti ti-photo" aria-hidden="true"></i>
+    <span>Add a branded graphic (50 / 30 / 20 visual breakdown)</span>
+  </div>
+  <div class="post-reactions">
+    <span class="react-pill">Like</span>
+    <span class="react-pill">Comment</span>
+    <span class="react-pill">Share</span>
+  </div>
+</div>
+
+<div class="section-label">Best practices for Facebook</div>
+<div class="tips-grid">
+  <div class="tip-card">
+    <div class="tip-icon"><i class="ti ti-clock" aria-hidden="true"></i></div>
+    <div class="tip-title">Best posting times</div>
+    <div class="tip-desc">Wed–Fri, 9–11 AM or 6–8 PM local time. Avoid weekends for finance content.</div>
+  </div>
+  <div class="tip-card">
+    <div class="tip-icon"><i class="ti ti-photo" aria-hidden="true"></i></div>
+    <div class="tip-title">Image format</div>
+    <div class="tip-desc">1200×630px for feed posts. Use branded green + dark navy from your cover design.</div>
+  </div>
+  <div class="tip-card">
+    <div class="tip-icon"><i class="ti ti-align-left" aria-hidden="true"></i></div>
+    <div class="tip-title">Post length</div>
+    <div class="tip-desc">150–300 words sweet spot. Facebook shows "See more" after ~3 lines — hook must land before that.</div>
+  </div>
+  <div class="tip-card">
+    <div class="tip-icon"><i class="ti ti-repeat" aria-hidden="true"></i></div>
+    <div class="tip-title">Posting frequency</div>
+    <div class="tip-desc">3–5 posts per week. Mix: 2 educational posts, 1 reel, 1 engagement post, 1 motivational.</div>
+  </div>
+</div>
+
+<div class="cta-bar">
+  <i class="ti ti-bulb" aria-hidden="true"></i>
+  <span>Reuse this exact structure for any topic — just swap the hook, swap the bullet points, keep the CTA at the end.</span>
+</div>
+
+</div>

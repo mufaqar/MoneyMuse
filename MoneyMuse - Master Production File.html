@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoneyMusa Usa - Master Production File</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #f4f6f9; color: #1a1a2e; padding: 2rem 1rem; }
+.container { max-width: 1000px; margin: 0 auto; }
+h1 { font-size: 2.2rem; font-weight: 700; color: #0f3460; margin-bottom: 0.3rem; }
+h1 small { font-size: 1rem; font-weight: 400; color: #666; }
+.subtitle { color: #555; font-size: 1rem; margin-bottom: 2.5rem; border-left: 4px solid #16c79a; padding-left: 1rem; }
+
+.brand-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.brand-logo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #16c79a; }
+.brand-info { flex: 1; }
+.brand-info h2 { font-size: 1.5rem; color: #0f3460; }
+.brand-info .tagline { color: #666; font-size: 0.95rem; margin-top: 0.2rem; }
+
+.toc { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.toc h2 { font-size: 1rem; color: #0f3460; margin-bottom: 0.6rem; }
+.toc ol { list-style: none; columns: 2; column-gap: 1.5rem; font-size: 0.9rem; }
+.toc li { padding: 0.25rem 0; }
+.toc a { color: #16c79a; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.toc .toc-num { font-weight: 600; color: #16c79a; }
+
+.section { margin-bottom: 2.5rem; }
+.section-header { font-size: 1.3rem; font-weight: 600; color: #0f3460; background: #e8ecf4; padding: 0.7rem 1.2rem; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
+.section-header .badge { font-size: 0.75rem; font-weight: 600; background: #16c79a; color: #fff; padding: 0.2rem 0.7rem; border-radius: 20px; }
+.section-header .badge.gold { background: #ff8c42; }
+.section-header .badge.blue { background: #4a7cff; }
+
+.card { background: #fff; border-radius: 10px; padding: 1rem 1.3rem; margin-bottom: 0.7rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.card-body { flex: 1; }
+.card-title { font-size: 1.05rem; font-weight: 600; color: #1a1a2e; }
+.card-desc { font-size: 0.88rem; color: #666; margin-top: 0.2rem; line-height: 1.4; }
+
+.rule-list { list-style: none; background: #fff; border-radius: 10px; padding: 1rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.rule-list li { padding: 0.35rem 0; font-size: 0.92rem; color: #444; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 0.5rem; }
+.rule-list li:last-child { border-bottom: none; }
+.rule-list .bullet { color: #16c79a; font-weight: 700; }
+
+.prompt-box { background: #f9fafc; border-radius: 6px; padding: 0.8rem 1rem; font-size: 0.88rem; line-height: 1.5; color: #444; font-family: 'Courier New', monospace; border-left: 3px solid #16c79a; white-space: pre-wrap; }
+.prompt-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #16c79a; margin-bottom: 0.3rem; }
+
+.scene { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #16c79a; }
+.scene-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+.scene-num { font-weight: 700; color: #16c79a; font-size: 0.9rem; }
+.scene-desc { font-style: italic; color: #555; font-size: 0.9rem; }
+.voiceover { background: #f0f4ff; border-radius: 6px; padding: 0.8rem 1rem; margin-top: 0.7rem; font-size: 0.95rem; line-height: 1.6; color: #1a1a2e; border-left: 3px solid #4a7cff; }
+.voiceover-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #4a7cff; margin-bottom: 0.3rem; }
+
+.thumbnail-box { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #ff8c42; margin-bottom: 1rem; }
+.thumbnail-box .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+.thumbnail-box .label.gold { color: #ff8c42; }
+.thumbnail-box .label.blue { color: #4a7cff; }
+
+.seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.seo-card { background: #fff; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.seo-card h3 { font-size: 0.9rem; color: #0f3460; margin-bottom: 0.5rem; }
+.seo-card ul { list-style: none; }
+.seo-card li { font-size: 0.88rem; color: #444; padding: 0.25rem 0; border-bottom: 1px solid #f0f0f0; }
+.seo-card li:last-child { border-bottom: none; }
+.seo-card.tags li { display: inline-block; background: #eef2f7; padding: 0.2rem 0.6rem; border-radius: 4px; margin: 0.2rem; font-size: 0.8rem; border: none; }
+.seo-desc { font-size: 0.85rem; line-height: 1.6; color: #444; margin-bottom: 0.5rem; }
+
+.vonote { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.vonote ul { list-style: none; font-size: 0.92rem; line-height: 1.8; color: #444; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.about-card { background: #fff; border-radius: 10px; padding: 1rem 1.3rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.about-card h3 { font-size: 0.9rem; color: #0f3460; margin-bottom: 0.4rem; }
+.about-card p, .about-card li { font-size: 0.88rem; color: #444; line-height: 1.6; }
+.about-card ul { list-style: none; margin-top: 0.3rem; }
+.about-card ul li { padding: 0.2rem 0; }
+.about-card ul li::before { content: "\\2713 "; color: #16c79a; font-weight: 700; }
+
+.intro-script { background: #fff; border-radius: 10px; padding: 1rem 1.3rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #4a7cff; }
+.intro-script .line { padding: 0.3rem 0; font-size: 0.92rem; color: #444; line-height: 1.6; }
+
+hr { border: none; border-top: 2px solid #e0e4ec; margin: 2rem 0; }
+footer { margin-top: 3rem; text-align: center; font-size: 0.85rem; color: #999; padding: 1rem 0; }
+
+@media (max-width: 700px) { .toc ol { columns: 1; } .seo-grid { columns: 1; } .about-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ===== BRAND HEADER ===== -->
+<div class="brand-header">
+    <img src="assets/Logo.jpg" alt="MoneyMusa Usa Logo" class="brand-logo">
+    <div class="brand-info">
+        <h2>MoneyMusa Usa</h2>
+        <div class="tagline">Personal finance explained simply through animation</div>
+    </div>
+</div>
+
+<h1>Master Production File <small>All instructions &amp; completed work</small></h1>
+<div class="subtitle">Complete guide for creating animated personal finance explainer videos</div>
+
+<!-- ===== TABLE OF CONTENTS ===== -->
+<div class="toc">
+    <h2>Contents</h2>
+    <ol>
+        <li><a href="#s0"><span class="toc-num">00</span> About &amp; Brand</a></li>
+        <li><a href="#s1"><span class="toc-num">01</span> Short Intro Script</a></li>
+        <li><a href="#s2"><span class="toc-num">02</span> Video Ideas</a></li>
+        <li><a href="#s3"><span class="toc-num">03</span> Video Script Rules</a></li>
+        <li><a href="#s4"><span class="toc-num">04</span> Image Prompts for Scenes</a></li>
+        <li><a href="#s5"><span class="toc-num">05</span> Thumbnail Prompts</a></li>
+        <li><a href="#s6"><span class="toc-num">06</span> SEO Metadata</a></li>
+        <li><a href="#s7"><span class="toc-num">07</span> AI Voiceover</a></li>
+        <li><a href="#s8"><span class="toc-num">08</span> Video 01: Why Everything Changes After $100,000</a></li>
+        <li><a href="#s9"><span class="toc-num">09</span> Video 02: The Subscription Trap That Costs You $2,000 a Year</a></li>
+    </ol>
+</div>
+
+<!-- ===================================================================================== -->
+<!-- SECTION 0: ABOUT & BRAND -->
+<!-- ===================================================================================== -->
+<div class="section" id="s0">
+    <div class="section-header">00 &nbsp; About &amp; Brand <span class="badge">Info</span></div>
+    <div class="about-grid">
+        <div class="about-card">
+            <h3>Channel Details</h3>
+            <ul>
+                <li>Channel name: MoneyMusa Usa</li>
+                <li>Logo: assets/Logo.jpg</li>
+                <li>Niche: Personal finance, money psychology, investing, passive income, financial traps</li>
+                <li>Style: Simple animated explainer videos (similar to Nick Invests)</li>
+                <li>Target audience: 18 to 40 year olds who want simple money explanations</li>
+            </ul>
+        </div>
+        <div class="about-card">
+            <h3>Visual Identity</h3>
+            <ul>
+                <li>Simple 2D cartoon finance explainer illustration</li>
+                <li>Flat vector style with bold black outlines</li>
+                <li>Consistent round-faced cartoon character</li>
+                <li>Color palette: green, blue, grey, white</li>
+                <li>Clean white or light background</li>
+                <li>Finance objects: piggy bank, coins, wallet, vault, charts, house, money stacks, laptop</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ===================================================================================== -->
+<!-- SECTION 1: SHORT INTRO SCRIPT -->
+<!-- ===================================================================================== -->
+<div class="section" id="s1">
+    <div class="section-header">01 &nbsp; Short Intro Script <span class="badge blue">Video Intro</span></div>
+    <div class="intro-script">
+        <div class="line"><strong style="color:#0f3460;">[Upbeat, friendly music fades in]</strong></div>
+        <div class="line" style="margin-top:0.5rem;"><strong style="color:#0f3460;">Host/Character on screen:</strong> "Hey, I'm MoneyMusa. Welcome to MoneyMusa Usa."</div>
+        <div class="line"><strong style="color:#0f3460;">[Character waves, simple animation]</strong></div>
+        <div class="line">"Here, we break down personal finance, money psychology, investing, and financial traps — using simple stories and simple animations."</div>
+        <div class="line">"No complicated jargon. No boring lectures. Just real money conversations that actually make sense."</div>
+        <div class="line" style="margin-top:0.5rem;"><strong style="color:#0f3460;">[Channel logo appears briefly]</strong></div>
+        <div class="line">"If you're ready to understand money better and build wealth the smart way — you're in the right place. Let's get into it."</div>
+        <div class="line" style="margin-top:0.5rem;"><strong style="color:#0f3460;">[Music swells, transitions to main video content]</strong></div>
+    </div>
+</div>
+
+<!-- ===================================================================================== -->
+<!-- SECTION 2: VIDEO IDEAS -->
+<!-- ===================================================================================== -->
+<div class="section" id="s2">
+    <div class="section-header">02 &nbsp; Video Ideas <span class="badge">Instructions</span></div>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">Generate viral YouTube video topic ideas</div>
+        </div>
+    </div>
+    <ul class="rule-list">
+        <li><span class="bullet">•</span> Topics: money psychology, personal finance, investing, financial traps, wealth building, passive income</li>
+        <li><span class="bullet">•</span> Titles should trigger curiosity or challenge common beliefs about money</li>
+        <li><span class="bullet">•</span> Style similar to Nick Invests — educational but highly clickable</li>
+        <li><span class="bullet">•</span> Avoid generic topics like "How to Save Money"</li>
+        <li><span class="bullet">•</span> Focus on psychological insights, hidden financial traps, and surprising money truths</li>
+    </ul>
+    <div style="background:#fff; border-radius:8px; padding:0.8rem 1rem; margin-top:0.7rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+        <div style="font-size:0.8rem; font-weight:600; color:#0f3460; margin-bottom:0.3rem;">Topic patterns:</div>
+        <div style="font-size:0.85rem; color:#555; line-height:1.8;">
+            Why Everything Changes After $X | The X Trap That Keeps People Poor | The Hidden Cost of X<br>
+            Why Most People Stay Broke | What Happens When You Reach $X | The Financial Mistake Almost Everyone Makes
+        </div>
+    </div>
+    <div style="background:#fff; border-radius:8px; padding:0.8rem 1rem; margin-top:0.7rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+        <div style="font-size:0.8rem; font-weight:600; color:#0f3460; margin-bottom:0.3rem;">20 ideas generated &rarr; See <a href="Ideas.html" style="color:#16c79a;">Ideas.html</a></div>
+    </div>
+</div>
+
+<!-- ===================================================================================== -->
+<!-- SECTION 3: VIDEO SCRIPT RULES -->
+<!-- ===================================================================================== -->
+<div class="section" id="s3">
+    <div class="section-header">03 &nbsp; Video Script Rules <span class="badge">Instructions</span></div>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">Write a complete YouTube video script</div>
+        </div>
+    </div>
+    <ul class="rule-list">
+        <li><span class="bullet">•</span> Storytelling, conversational style like animated finance explainer channels</li>
+        <li><span class="bullet">•</span> Start with a strong psychological hook</li>
+        <li><span class="bullet">•</span> Use relatable real life situations about money</li>
+        <li><span class="bullet">•</span> Explain concepts simply with examples, metaphors, comparisons</li>
+        <li><span class="bullet">•</span> Include psychological insights about how people think about money</li>
+        <li><span class="bullet">•</span> Avoid complicated financial jargon</li>
+        <li><span class="bullet">•</span> Length: 1800-2200 words, natural voiceover style</li>
+    </ul>
+    <div style="background:#fff; border-radius:8px; padding:0.8rem 1rem; margin-top:0.7rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+        <div style="font-size:0.8rem; font-weight:600; color:#0f3460; margin-bottom:0.3rem;">Structure:</div>
+        <div style="font-size:0.85rem; color:#555; line-height:1.8;">
+            1. Hook &rarr; 2. Problem setup &rarr; 3. Core explanation &rarr; 4. Insight section &rarr; 5. Practical takeaway &rarr; 6. Ending
+        </div>
+    </div>
+</div>
+
+<!-- ===================================================================================== -->
+<!-- SECTION 4: IMAGE PROMPTS FOR SCENES -->
+<!-- ===================================================================================== -->
+<div class="section" id="s4">
+    <div class="section-header">04 &nbsp; Image Prompts for Scenes <span class="badge">Instructions</span></div>
+    <ul class="rule-list">
+        <li><span class="bullet">•</span> Only generate prompts (for Midjourney, Leonardo AI, DALL-E, Stable Diffusion) — not images</li>
+        <li><span class="bullet">•</span> Create 1 prompt per ~2 sentences of script</li>
+        <li><span class="bullet">•</span> Use consistent round-faced cartoon character across all scenes</li>
+    </ul>
+    <div style="background:#fff; border-radius:8px; padding:0.8rem 1rem; margin-top:0.7rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+        <div style="font-size:0.8rem; font-weight:600; color:#0f3460; margin-bottom:0.3rem;">Style requirements for every prompt:</div>
+        <div style="font-size:0.85rem; color:#555; line-height:1.8;">
+            Simple 2D cartoon finance explainer illustration | Flat vector style | Minimal shading | Bold thick black outlines<br>
+            Clean white or light background | Consistent character | Palette: green, blue, grey, white<br>
+            Finance objects: piggy bank, coins, wallet, vault, charts, house, money stacks, laptop, investment symbols<br>
+            Scenes should be simple and easy to animate
+        </div>
+    </div>
+    <div style="background:#fff; border-radius:8px; padding:0.8rem 1rem; margin-top:0.5rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+        <div style="font-size:0.8rem; font-weight:600; color:#0f3460; margin-bottom:0.3rem;">Output format:</div>
+        <div style="font-size:0.85rem; color:#555;">
+            Scene N &mdash; Short description | Image prompt
+        </div>
+    </div>
+</div>
+
+<!-- ===================================================================================== -->
+<!-- SECTION 5: THUMBNAIL PROMPTS -->
+<!-- ===================================================================================== -->
+<div class="section" id="s5">
+    <div class="section-header">05 &nbsp; Thumbnail Prompts <span class="badge">Instructions</span></div>
+    <ul class="rule-list">
+        <li><span class="bullet">•</span> Only generate prompt, not the image</li>
+        <li><span class="bullet">•</span> Simple, easy to understand, minimal background</li>
+        <li><span class="bullet">•</span> Flat 2D vector, bold black outlines</li>
+        <li><span class="bullet">•</span> Cartoon character with exaggerated expressions (surprise, thinking, pointing, excitement)</li>
+        <li><span class="bullet">•</span> Finance objects: money stacks, piggy bank, coins, arrows, charts, vault, house, cash</li>
+        <li><span class="bullet">•</span> Clean composition — 1 or 2 main elements only</li>
+        <li><span class="bullet">•</span> Leave space for big bold text overlay</li>
+    </ul>
+    <div style="background:#fff; border-radius:8px; padding:0.8rem 1rem; margin-top:0.7rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+        <div style="font-size:0.8rem; font-weight:600; color:#0f3460; margin-bottom:0.3rem;">Output format:</div>
+        <div style="font-size:0.85rem; color:#555;">
+            Thumbnail Idea | Thumbnail Text Suggestion (3-5 words) | AI Image Prompt
+        </div>
+    </div>
+</div>
+
+<!-- ===================================================================================== -->
+<!-- SECTION 6: SEO METADATA -->
+<!-- ===================================================================================== -->
+<div class="section" id="s6">
+    <div class="section-header">06 &nbsp; SEO Metadata <span class="badge">Instructions</span></div>
+    <ul class="rule-list">
+        <li><span class="bullet">•</span> Titles: highly clickable, curiosity driven, psychological triggers</li>
+        <li><span class="bullet">•</span> Description: SEO optimized, 2-3 paragraphs, keywords naturally included</li>
+        <li><span class="bullet">•</span> Tags: 20-30 high search keywords (personal finance, money psychology, investing, wealth building)</li>
+    </ul>
+    <div style="background:#fff; border-radius:8px; padding:0.8rem 1rem; margin-top:0.7rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">
+        <div style="font-size:0.8rem; font-weight:600; color:#0f3460; margin-bottom:0.3rem;">Generate:</div>
+        <div style="font-size:0.85rem; color:#555;">
+            5 Titles | Description (2-3 paragraphs) | 20-30 Tags | 15 Keywords | 5-8 Hashtags
+        </div>
+    </div>
+</div>
+
+<!-- ===================================================================================== -->
+<!-- SECTION 7: AI VOICEOVER -->
+<!-- ===================================================================================== -->
+<div class="section" id="s7">
+    <div class="section-header">07 &nbsp; AI Voiceover <span class="badge">Instructions</span></div>
+    <ul class="rule-list">
+        <li><span class="bullet">•</span> Tone: Conversational, warm, educational — like a knowledgeable friend</li>
+        <li><span class="bullet">•</span> Pace: Moderate with natural pauses. Slow for key numbers/insights.</li>
+        <li><span class="bullet">•</span> Voice style: Neutral accent, natural cadence — not robotic</li>
+        <li><span class="bullet">•</span> 1-second pause after each rhetorical question</li>
+    </ul>
+</div>
+
+<hr>
+
+<!-- ===================================================================================== -->
+<!-- SECTION 8: VIDEO 01 -->
+<!-- ===================================================================================== -->
+<div class="section" id="s8">
+    <div class="section-header">08 &nbsp; Video 01: Why Everything Changes After $100,000 <span class="badge gold">Completed</span></div>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
+        <span style="background:#e8ecf4; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem;">Category: Money Psychology</span>
+        <span style="background:#e8ecf4; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem;">Est. Length: ~12 min</span>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 01</span>
+            <span class="scene-desc">Person staring at bank app, eyes widening</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            When was the last time you checked your net worth and felt something shift inside you? Not just excitement. Something deeper. For most people, that moment happens at a very specific number: one hundred thousand dollars.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a round-faced cartoon man in his 30s wearing a casual green sweater sitting on a simple chair, staring at a laptop screen with large "$100,000" displayed in green, eyes widened with surprise, piggy bank on the desk beside the laptop, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 02</span>
+            <span class="scene-desc">Timeline from $0 to $100k</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            We all grow up hearing that money is just money. That hitting a number won't change who you are. And for the first twenty, thirty, even fifty thousand dollars — that's mostly true. You save, you invest, you build. It feels linear. But then you cross a line you didn't even know existed.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean light grey background, a horizontal timeline road with milestones marked "$10,000" "$30,000" "$50,000" "$75,000" "$100,000" as green flags, a small cartoon character walking along the path with a backpack, the final "$100,000" flag glowing brighter with sparkle effects, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 03</span>
+            <span class="scene-desc">Crossroads / door labeled $100k</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            $100,000 is not just a number. It's a psychological passcode. When you cross it, something shifts in how you see money, how you see risk, and most surprisingly — how you see yourself.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a round-faced cartoon man standing at a fork in the road, one path labeled "Old Money Mindset" fading into grey, the other path labeled "New Money Mindset" glowing green, a large glowing green gateway arch with "$100,000" above it, character looking up at it with curiosity, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 04</span>
+            <span class="scene-desc">Brain illustration scarcity vs growth</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            Here's what happens psychologically. When you have less than $100,000, every financial decision feels heavy. A $500 emergency feels like a crisis. You think in days and weeks. Your brain is in scarcity mode. And scarcity mode keeps you focused on survival, not growth.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a large simple cartoon brain split into two halves, left side labelled "Scarcity" with grey clouds and a frowning face icon, right side labelled "Growth" with green glow and a smiling face icon, small coins and lightning bolts around the brain, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 05</span>
+            <span class="scene-desc">Calendar showing before/after $100k</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            But when you cross $100,000, something switches. Your financial buffer changes the math of your life. That same $500 emergency? It becomes an inconvenience, not a disaster. You stop reacting and start choosing. Your time horizon expands from weeks to years.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean light background, a calendar with red emergency markers on the left side labelled "Before $100k" with stressed character, on the right side labelled "After $100k" the same character calmly looking at a calendar with green checkmarks, a large green shield protecting the right side, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 06</span>
+            <span class="scene-desc">Compound interest snowball</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            And here's the part nobody tells you. Before $100,000, compound interest feels like a theory. It's hard to get excited about 7% of $20,000 — that's only $1,400. But 7% of $100,000 is $7,000. That's real money. That's a vacation. A used car. A year of groceries.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a large green snowball rolling down a hill growing bigger with each roll, labeled at each stage "$20,000" "$50,000" "$75,000" "$100,000" with percentage arrows showing 7% growth, the character standing at the bottom watching the snowball get huge, dollar signs floating upward, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 07</span>
+            <span class="scene-desc">You working vs your money working</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            $7,000 a year is more than most people save in an entire year. And the crazy part? That growth happens without you lifting a finger. Your money starts working harder than you do. You stop asking "can I afford this?" and start asking "what else could this money be doing for me?"
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a split screen, left side shows a tired cartoon character working at a desk with sweat drops and a small coin, right side shows the same character relaxing in a hammock while a large money stack with a green upward arrow grows automatically beside them, text "You Working" vs "Your Money Working", simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 08</span>
+            <span class="scene-desc">Social pressure / keeping up</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            But here's where it gets tricky. Crossing $100,000 also changes your social world. Suddenly the people around you are buying nicer things. Better cars. Fancier dinners. And there's an invisible pressure to keep up — because now, technically, you can. That's the most dangerous moment.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a round-faced cartoon man standing in the center, surrounded by cartoon friends showing off luxury items like a fancy car, designer bag, and expensive watch, thought bubbles showing dollar signs and pressure arrows pushing toward the character, the character looking unsure with a hand on chin, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 09</span>
+            <span class="scene-desc">Scale: spending vs investing</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            Most people hit $100,000 and immediately start spending like they're rich. They upgrade everything. And within two years, they're back to $30,000. $100,000 is a filter. It separates people who got lucky from people who are actually building wealth.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean light background, a large balance scale, left side stacked with luxury items (car, watch, handbag) weighing heavier, right side with a small green plant labelled "Investments" barely lifting, the cartoon character standing in the middle scratching head with a confused expression, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 10</span>
+            <span class="scene-desc">Past self vs present self</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            The people who keep the money and grow it further — they don't see $100,000 as a finish line. They see it as proof. $100,000 changes you, not because the money changes, but because your identity changes. You stop being someone who hopes to build wealth and become someone who actually builds it.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a round-faced cartoon man standing tall with confident posture, looking back at a smaller faded version of himself labelled "Old Me" sitting worried with a small coin, the present version holding a large green key labelled "$100k", a bright glow radiating from behind him, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 11</span>
+            <span class="scene-desc">Mountain peaks: $100k to $1M</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            $100,000 is not the destination. It's the starting line of a completely different game. The first $100,000 is the hardest because you're fighting against your own psychology. The next $100,000 is easier because you've already won the psychological battle.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a mountain landscape, a cartoon character standing proudly on the peak of the first mountain labelled "$100k" holding a green flag, in front of them a much taller mountain labelled "$500k" and "$1M" with a winding path upward, sunrise behind the mountains casting a warm glow, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 12</span>
+            <span class="scene-desc">Walking into bright future</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            So if you're not at $100,000 yet — don't focus on the number. Focus on becoming the type of person who reaches it. Build the habits. Trust the system. The number is just a symptom of who you've become. And when you finally cross it, you'll realize the real change wasn't in your bank account. It was in you.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a round-faced cartoon man walking confidently forward on a glowing green path into a bright horizon, left behind are faded grey versions of old habits (credit card, takeout box, shopping bag), ahead are glowing green icons of a house, investment chart, and freedom symbol, sunlight streaming from the horizon, simple color palette green blue grey white</div>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+        <div class="section-header" style="font-size:1.1rem;">Thumbnail <span class="badge gold">Video 01</span></div>
+        <div class="thumbnail-box">
+            <div class="label gold">Thumbnail Idea</div>
+            <p style="margin:0.3rem 0 0.8rem; color:#444; font-size:0.95rem;">Character at a crossroads in front of a massive glowing "$100,000" sign, looking up with wide-eyed amazement, hand on chin thinking pose.</p>
+            <div class="label blue">Thumbnail Text</div>
+            <p style="margin:0.3rem 0 0.8rem; font-size:1.3rem; font-weight:700; color:#0f3460;">"EVERYTHING CHANGES"</p>
+            <div class="label gold">AI Image Prompt</div>
+            <div class="prompt-box">simple 2D cartoon finance explainer thumbnail illustration, flat vector style, bold black outlines, minimal background with dark green gradient, a round-faced cartoon man in a green sweater standing in center looking up in amazement at a giant glowing "$100,000" text in bright green, one hand on chin thinking pose, tiny sparkles around the number, character has exaggerated surprised expression, clean composition with space for bold text on top, simple color palette green blue dark grey white</div>
+        </div>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+        <div class="section-header" style="font-size:1.1rem;">SEO <span class="badge gold">Video 01</span></div>
+        <div class="seo-grid">
+            <div class="seo-card">
+                <h3>Title Options</h3>
+                <ul>
+                    <li>Why Everything Changes After $100,000</li>
+                    <li>The $100,000 Threshold That Changes Your Brain</li>
+                    <li>What Nobody Tells You About Hitting $100,000</li>
+                    <li>Why $100,000 Changes Everything (Not Just Your Bank Account)</li>
+                    <li>The Moment Your Money Starts Working Harder Than You</li>
+                </ul>
+            </div>
+            <div class="seo-card">
+                <h3>Description</h3>
+                <div class="seo-desc">There's a number that quietly changes everything about how you think about money. It's not $1 million. It's not $500,000. It's $100,000. In this video, we break down the psychological shift that happens when your net worth hits six figures.</div>
+                <div class="seo-desc">We explore the scarcity-to-growth mindset flip, the compound interest tipping point, the social pressure trap, and why the first $100,000 is the hardest but most important financial milestone you'll ever hit.</div>
+            </div>
+            <div class="seo-card tags">
+                <h3>Tags (30)</h3>
+                <ul>
+                    <li>personal finance</li><li>money psychology</li><li>$100,000 net worth</li><li>financial milestones</li><li>wealth building</li><li>investing for beginners</li><li>money mindset</li><li>first $100k</li><li>compound interest explained</li><li>financial freedom</li><li>how to build wealth</li><li>money tips</li><li>financial independence</li><li>net worth explained</li><li>passive income</li><li>investing explained</li><li>financial education</li><li>wealth mindset</li><li>scarcity vs abundance</li><li>becoming a millionaire</li><li>finance explained</li><li>animated finance</li><li>saving money</li><li>financial literacy</li><li>how to save $100k</li><li>money habits</li><li>financial psychology</li><li>wealth creation</li><li>financial goals</li><li>budgeting tips</li>
+                </ul>
+            </div>
+            <div class="seo-card">
+                <h3>Keywords (15)</h3>
+                <ul>
+                    <li>$100,000 net worth</li><li>first $100k</li><li>money psychology</li><li>financial milestones</li><li>compound interest</li><li>wealth building tips</li><li>investing for beginners</li><li>financial independence</li><li>money mindset shift</li><li>how to build wealth</li><li>personal finance explained</li><li>saving $100,000</li><li>financial freedom journey</li><li>wealth psychology</li><li>net worth milestones</li>
+                </ul>
+            </div>
+            <div class="seo-card" style="grid-column: span 2;">
+                <h3>Hashtags (7)</h3>
+                <ul>
+                    <li>#PersonalFinance</li><li>#MoneyMindset</li><li>#FinancialFreedom</li><li>#WealthBuilding</li><li>#First100K</li><li>#MoneyPsychology</li><li>#InvestingExplained</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+        <div class="section-header" style="font-size:1.1rem;">AI Voiceover Notes <span class="badge gold">Video 01</span></div>
+        <div class="vonote">
+            <ul>
+                <li><strong>Tone:</strong> Conversational, warm, educational</li>
+                <li><strong>Pace:</strong> Moderate, slow at key numbers, pause after rhetorical questions</li>
+                <li><strong>Emphasis:</strong> "$100,000", "scarcity vs growth", "compound interest", "identity changes"</li>
+                <li><strong>Duration:</strong> ~1,800 words at 150 wpm = ~12 minutes</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===================================================================================== -->
+<!-- SECTION 9: VIDEO 02 (in product/) -->
+<!-- ===================================================================================== -->
+<div class="section" id="s9">
+    <div class="section-header">09 &nbsp; Video 02: The Subscription Trap That Costs You $2,000 a Year <span class="badge gold">Completed &rarr; product/</span></div>
+    <p style="font-size:0.9rem; color:#666; margin-bottom:1rem;">Full production file saved in <code style="background:#e8ecf4; padding:0.2rem 0.5rem; border-radius:4px;">product/The Subscription Trap That Costs You $2,000 a Year.html</code></p>
+
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
+        <span style="background:#e8ecf4; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem;">Category: Financial Traps</span>
+        <span style="background:#e8ecf4; padding:0.3rem 0.8rem; border-radius:20px; font-size:0.85rem;">Est. Length: ~10 min</span>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 01</span>
+            <span class="scene-desc">Phone screen showing subscription list scrolling endlessly</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            When was the last time you actually looked at every single subscription coming out of your bank account? Not just the big ones you remember. All of them. Because here's the uncomfortable truth — most people are paying for things they don't even remember buying.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a large smartphone screen filling most of the frame showing a long vertical list of subscription icons (Netflix, Spotify, gym, cloud storage, meal kit, magazine, app subscriptions), a cartoon hand scrolling down with a worried expression, red dollar signs next to each item, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 02</span>
+            <span class="scene-desc">Character shocked looking at calculator with total</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            Let me show you what I mean. A streaming service here. A gym membership there. A cloud storage plan. A meal kit delivery. A magazine you subscribed to for a free trial and forgot to cancel. A premium version of an app you barely use. Individually, each one feels like nothing. But added together? You're looking at over $2,000 a year. Gone. Every single year.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a round-faced cartoon man sitting at a desk staring wide-eyed at a large calculator displaying "$2,000", multiple small subscription icons floating around his head like clouds, a thought bubble showing a shocked face, dollar signs floating out of his wallet on the desk, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 03</span>
+            <span class="scene-desc">Calendar showing $2,000 broken down per month</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            $2,000 a year is about $167 a month. And $167 a month is roughly $5.50 a day. That's the brilliance of the subscription model — it breaks down a huge number into tiny, painless pieces. $5.50 a day feels like spare change. But over a decade, that $5.50 a day turns into $20,000. And what do you have to show for it?
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a calendar showing each month with "$167" written on it, small coins dropping one by one into a subscription box, a 10-year timeline at the bottom showing "$167" growing into "$20,000" with a faded question mark at the end, the character looking at it with a puzzled expression, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 04</span>
+            <span class="scene-desc">Brain showing pleasure/reward for new subscription</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            This isn't an accident. Subscription companies invest millions into making sure you forget about them. They know that the moment you actively think about a subscription is the moment you cancel it. So they make the signup frictionless, the renewal automatic, and the cancellation intentionally buried three menus deep. They're betting on your inertia. And they're winning.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a cartoon brain on one side with a "Subscribe" button giving a dopamine sparkle, on the other side a maze-like path with arrows labeled "Cancel" going in circles with dead ends, a small frustrated character trying to navigate the maze, a corporate building in the background counting money, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 05</span>
+            <span class="scene-desc">Pile of unused subscription items fading away</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            Here's the real test. Go to your bank app right now and look at the last three months of transactions. Count every single recurring charge. Then ask yourself one honest question for each one: "Did I get real value from this in the last 30 days?" For most people, about a third of their subscriptions will fail that test. Services they signed up for with good intentions and completely forgot about.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a pile of faded grey subscription icons (streaming, gym, meal kit, app) stacked like a pile of junk, a round-faced cartoon man holding a magnifying glass inspecting them, green checkmarks on some items and red X marks on others, a speech bubble showing "Did I use this?" simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 06</span>
+            <span class="scene-desc">Before/after: subscription money redirected to investing</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            Now here's the part that changes everything. That $167 a month you're leaking to forgotten subscriptions? If you redirected it into a simple index fund earning 8% annually, in 20 years it would grow to over $95,000. Almost ONE HUNDRED THOUSAND DOLLARS. From subscriptions you weren't even using. That's not savings. That's found money.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a split scene, left side showing coins dropping into a trash can labeled "Subscriptions", right side showing the same coins flowing into a growing green investment chart with an upward trend line, a dollar sign transforming into a green plant growing into a tree with "$95,000" on the trunk, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 07</span>
+            <span class="scene-desc">Character with a simple checklist / action plan</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            Here's what to do. First, do a subscription audit right now. Go through your bank statements and list every recurring payment. Second, cancel anything you haven't used in the last 30 days. Not "might use someday" — actually used. Third, for the ones you keep, ask yourself if there's a cheaper annual plan. Many services give you a discount if you pay yearly instead of monthly.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a round-faced cartoon man holding a green clipboard with a checklist, three items checked off with a green pen: "1. Audit subscriptions" "2. Cancel unused" "3. Switch to annual", a piggy bank next to him smiling with a green glow, simple color palette green blue grey white</div>
+    </div>
+
+    <div class="scene">
+        <div class="scene-header">
+            <span class="scene-num">SCENE 08</span>
+            <span class="scene-desc">Character walking away from subscription trap toward freedom</span>
+        </div>
+        <div class="voiceover">
+            <div class="voiceover-label">Voiceover</div>
+            The subscription trap isn't about being irresponsible. It's about being human. Companies design their entire business model around your tendency to forget. But once you see it, you can't unsee it. And that $2,000 a year — or $95,000 over 20 years — is yours to keep. You just have to take it back.
+        </div>
+        <div class="prompt-label" style="margin-top:0.5rem;">Image Prompt</div>
+        <div class="prompt-box">simple 2D cartoon finance explainer illustration, flat vector style, minimal shading, bold outlines, clean white background, a round-faced cartoon man walking away from a grey cage labeled "Subscription Trap" with chains breaking, walking toward a green horizon with a large "$95,000" and a house icon glowing in the distance, holding a wallet that is full and glowing green, simple color palette green blue grey white</div>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+        <div class="section-header" style="font-size:1.1rem;">Thumbnail <span class="badge gold">Video 02</span></div>
+        <div class="thumbnail-box">
+            <div class="label gold">Thumbnail Idea</div>
+            <p style="margin:0.3rem 0 0.8rem; color:#444; font-size:0.95rem;">Character looking shocked at a phone screen overflowing with subscription icons, money flying out of the screen. Exaggerated wide-eyed horrified expression.</p>
+            <div class="label blue">Thumbnail Text</div>
+            <p style="margin:0.3rem 0 0.8rem; font-size:1.3rem; font-weight:700; color:#0f3460;">"YOU'RE LOSING $2,000"</p>
+            <div class="label gold">AI Image Prompt</div>
+            <div class="prompt-box">simple 2D cartoon finance explainer thumbnail illustration, flat vector style, bold black outlines, minimal dark background, a round-faced cartoon man looking at a large smartphone with horrified wide-eyed expression, the phone screen overflowing with tiny subscription icons and dollar signs flying outward, hands held up in shock, bold red "$2,000" text floating above, clean composition with space for bold text overlay, simple color palette green blue dark grey white red accents</div>
+        </div>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+        <div class="section-header" style="font-size:1.1rem;">SEO <span class="badge gold">Video 02</span></div>
+        <div class="seo-grid">
+            <div class="seo-card">
+                <h3>Title Options</h3>
+                <ul>
+                    <li>The Subscription Trap That Costs You $2,000 a Year</li>
+                    <li>You're Paying for Things You Don't Even Remember</li>
+                    <li>How Subscriptions Are Quietly Draining Your Bank Account</li>
+                    <li>The $167 a Month Mistake Almost Everyone Makes</li>
+                    <li>Stop Letting Subscription Companies Steal Your Money</li>
+                </ul>
+            </div>
+            <div class="seo-card">
+                <h3>Description</h3>
+                <div class="seo-desc">Are you paying for subscriptions you forgot about? Most people are. In this video, we break down how the subscription economy is quietly draining thousands of dollars from your bank account every year — and how to stop it.</div>
+                <div class="seo-desc">We look at the psychology behind why we sign up and forget, the tactics companies use to keep you paying, and the simple audit that can save you over $95,000 in 20 years. No extreme budgeting required.</div>
+            </div>
+            <div class="seo-card tags">
+                <h3>Tags (30)</h3>
+                <ul>
+                    <li>subscription trap</li><li>personal finance</li><li>money saving tips</li><li>subscription audit</li><li>financial traps</li><li>stop wasting money</li><li>money psychology</li><li>budgeting tips</li><li>save money monthly</li><li>recurring charges</li><li>hidden expenses</li><li>financial education</li><li>money habits</li><li>wealth building</li><li>investing for beginners</li><li>cut expenses</li><li>frugal living</li><li>financial freedom</li><li>passive income</li><li>money mindset</li><li>subscription fatigue</li><li>finance explained</li><li>animated finance</li><li>financial literacy</li><li>save $2000</li><li>money waste</li><li>financial independence</li><li>budgeting for beginners</li><li>spending habits</li><li>wealth creation</li>
+                </ul>
+            </div>
+            <div class="seo-card">
+                <h3>Keywords (15)</h3>
+                <ul>
+                    <li>subscription trap</li><li>hidden subscriptions</li><li>save money monthly</li><li>financial traps explained</li><li>subscription audit</li><li>recurring expenses</li><li>money waste</li><li>personal finance tips</li><li>cut subscriptions</li><li>budgeting mistakes</li><li>forgotten subscriptions</li><li>save $2000 a year</li><li>money psychology</li><li>financial education</li><li>spending habits</li>
+                </ul>
+            </div>
+            <div class="seo-card" style="grid-column: span 2;">
+                <h3>Hashtags (7)</h3>
+                <ul>
+                    <li>#SubscriptionTrap</li><li>#PersonalFinance</li><li>#MoneySavingTips</li><li>#FinancialFreedom</li><li>#Budgeting</li><li>#StopWastingMoney</li><li>#FinancialEducation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+        <div class="section-header" style="font-size:1.1rem;">AI Voiceover Notes <span class="badge gold">Video 02</span></div>
+        <div class="vonote">
+            <ul>
+                <li><strong>Tone:</strong> Conversational, slightly urgent at the reveal, then empowering at the solution</li>
+                <li><strong>Pace:</strong> Moderate, speed up slightly during the "audit" section, slow down for the $95,000 number</li>
+                <li><strong>Emphasis:</strong> "$2,000 a year", "forgotten", "$95,000", "inertia", "found money"</li>
+                <li><strong>Duration:</strong> ~1,400 words at 150 wpm = ~9-10 minutes</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer>MoneyMusa Usa &mdash; Master Production File &bull; Finance explained simply through animation</footer>
+
+</div>
+</body>
+</html>
