@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Rich People Think About Time Differently | MoneyMuse</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #f4f6f9; color: #1a1a2e; padding: 2rem 1rem; }
+.container { max-width: 1000px; margin: 0 auto; }
+h1 { font-size: 2rem; font-weight: 700; color: #0f3460; margin-bottom: 0.3rem; }
+.subtitle { color: #555; font-size: 1rem; margin-bottom: 2rem; border-left: 4px solid #16c79a; padding-left: 1rem; }
+.badge { font-size: 0.75rem; font-weight: 600; background: #16c79a; color: #fff; padding: 0.2rem 0.7rem; border-radius: 20px; display: inline-block; }
+.badge.gold { background: #ff8c42; }
+.badge.blue { background: #4a7cff; }
+.badge.image { background: #9b59b6; color: #fff; }
+.badge.video { background: #e74c3c; color: #fff; }
+.section-header { font-size: 1.2rem; font-weight: 600; color: #0f3460; background: #e8ecf4; padding: 0.7rem 1.2rem; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.scene { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #2c3e50; }
+.scene-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+.scene-num { font-weight: 700; color: #2c3e50; font-size: 0.9rem; }
+.scene-desc { font-style: italic; color: #555; font-size: 0.9rem; }
+.voiceover { background: #f0f4ff; border-radius: 6px; padding: 0.8rem 1rem; margin-top: 0.7rem; font-size: 0.95rem; line-height: 1.6; color: #1a1a2e; border-left: 3px solid #4a7cff; }
+.voiceover-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #4a7cff; margin-bottom: 0.3rem; }
+.prompt-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; margin-bottom: 0.2rem; margin-top: 0.6rem; padding: 0.15rem 0.6rem; border-radius: 4px; display: inline-block; }
+.prompt-label.image { background: #9b59b6; }
+.prompt-label.video { background: #e74c3c; }
+.prompt-box { background: #f9fafc; border-radius: 6px; padding: 0.8rem 1rem; font-size: 0.88rem; line-height: 1.5; color: #444; font-family: 'Courier New', monospace; border-left: 3px solid #2c3e50; white-space: pre-wrap; margin-bottom: 0.5rem; }
+.prompt-box.video-prompt { border-left-color: #e74c3c; background: #fef5f5; }
+.img-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem; }
+.img-item { background: #f9fafc; border-radius: 6px; padding: 0.7rem; border-left: 3px solid #9b59b6; }
+.img-item .label { font-size: 0.7rem; font-weight: 600; color: #9b59b6; margin-bottom: 0.2rem; }
+.img-item .text { font-size: 0.82rem; color: #444; font-family: 'Courier New', monospace; line-height: 1.4; white-space: pre-wrap; }
+.vid-item { background: #fef5f5; border-radius: 6px; padding: 0.7rem; border-left: 3px solid #e74c3c; }
+.vid-item .label { font-size: 0.7rem; font-weight: 600; color: #e74c3c; margin-bottom: 0.2rem; }
+.vid-item .text { font-size: 0.82rem; color: #444; font-family: 'Courier New', monospace; line-height: 1.4; }
+.thumbnail-box { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #ff8c42; margin-bottom: 1rem; }
+.thumbnail-box .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+.thumbnail-box .label.gold { color: #ff8c42; }
+.thumbnail-box .label.blue { color: #4a7cff; }
+.seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.seo-card { background: #fff; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.seo-card h3 { font-size: 0.9rem; color: #0f3460; margin-bottom: 0.5rem; }
+.seo-card ul { list-style: none; }
+.seo-card li { font-size: 0.88rem; color: #444; padding: 0.25rem 0; border-bottom: 1px solid #f0f0f0; }
+.seo-card li:last-child { border-bottom: none; }
+.seo-card.tags li { display: inline-block; background: #eef2f7; padding: 0.2rem 0.6rem; border-radius: 4px; margin: 0.2rem; font-size: 0.8rem; border: none; }
+.seo-desc { font-size: 0.85rem; line-height: 1.6; color: #444; margin-bottom: 0.5rem; }
+.vonote { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.vonote ul { list-style: none; font-size: 0.92rem; line-height: 1.8; color: #444; }
+.meta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.meta-tag { background: #e8ecf4; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; }
+.meta-tag.style { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+footer { margin-top: 3rem; text-align: center; font-size: 0.85rem; color: #999; padding: 1rem 0; }
+@media (max-width: 700px) { .seo-grid { grid-template-columns: 1fr; } .img-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Why Rich People Think About Time Differently</h1>
+<div class="subtitle">Whiteboard sketching style — Hand-drawn marker animation on whiteboard</div>
+
+<div class="meta-row">
+    <span class="meta-tag">Category: Money Psychology</span>
+    <span class="meta-tag">Est. Length: ~3-4 min</span>
+    <span class="meta-tag style">Style: Whiteboard Sketching</span>
+    <span class="meta-tag">Scenes: 8</span>
+    <span class="meta-tag">Images: 24</span>
+    <span class="meta-tag">Video Prompts: 24</span>
+</div>
+
+<!-- SCENE 01 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 01</span>
+        <span class="scene-desc">Two characters making opposite choices — trading time vs money</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Two people. Same age. Same income. But one will be wealthy and one won't. It's not about how much they earn. It's about one fundamental difference — how they think about time. One person trades their time for money. The other treats time as their most valuable asset. And that single mindset shift creates a gap that compounds into millions over a lifetime.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Split screen comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, split screen with a vertical hand-drawn divider, left side shows a character drawn in sketch style with a clock above their head and a small dollar sign, looking tired with scribble sweat drops, right side shows the same character with a calm smile and a large clock above their head labeled "Asset" in green marker with a hand-drawn arrow pointing up, thick black marker outlines with hand-drawn wobble, marker color accents black green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Time vs money balance scale</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn balance scale with "Time" on one side scribbled in red marker and "Money" on the other side scribbled in green marker, the scale is perfectly balanced with a small doodle equals sign above it, a round-faced character drawn in sketch style sitting on top of the scale looking contemplative with a hand-drawn thought bubble showing a clock and a dollar sign, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Paths diverging visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, two diverging hand-drawn paths splitting from the same starting point labeled "Same Income" in black marker, one path labeled "Trade Time for Money" in red marker with scribble arrow pointing down with a sad doodle face, the other path labeled "Time as Asset" in green marker with a hand-drawn arrow pointing up with a star doodle and smiley face, a character silhouette standing at the fork looking at both paths, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Split screen animation</div>
+            <div class="text">Left character grows tired with sweat drops appearing as blue marker scribbles, right character stays calm with clock labeled "Asset" pulsing green marker glow, both sides animate simultaneously with hand-drawn wobble, 5-second contrasting motion, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Scale balancing animation</div>
+            <div class="text">Scale tips gently left and right as if weighing time vs money, character sits on top with subtle bounce, thought bubble fades in with hand-drawn marker stroke effect, 4-second gentle wobble motion, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Paths diverging animation</div>
+            <div class="text">Two paths draw themselves diverging from the starting point in real-time marker stroke, red path develops downward with scribble arrow revealing sad face, green path develops upward with star doodle appearing, character at fork turns head looking both ways with sketch animation, 6-second reveal motion with marker draw effect, one-time with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 02 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 02</span>
+        <span class="scene-desc">The hourly wage trap — trading time for money limits wealth</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Most people think about money in terms of hours. I make $25 an hour. If I want more money, I work more hours. But here's the ceiling — there are only 24 hours in a day. You can't work 25 hours. You can't work 30. So your income is capped by a limit you cannot escape. Rich people understand this intuitively, which is why they never trade their time directly for money.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Hourly wage ceiling</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn clock showing 24 hours with "$25/hr" scribbled next to it in black marker, a ceiling line drawn across the top labeled "Income Ceiling" in red marker with a stop sign doodle, a character drawn in sketch style hitting their head on the ceiling with scribble bump lines, below the clock hand-drawn dollar signs limited by the clock boundary, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Hourglass with money</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn hourglass, the top half filled with sand labeled "Time" in blue marker, each grain of sand has a small dollar sign doodle as it falls through, the bottom half fills slowly with coins labeled "Income" in green marker, a small character drawn in sketch style next to the hourglass pointing at the narrow neck labeled "Bottleneck" in red marker underline, thick black marker outlines with hand-drawn wobble, marker color accents black blue green red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — 24 blocks chart</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn bar chart with 24 equal blocks stacked vertically labeled "Hours" in black marker, 8 blocks filled with blue marker scribble labeled "Work", 8 blocks filled with green marker labeled "Sleep", 8 blocks filled with grey marker labeled "Everything Else", a red marker bracket on the "Work" blocks with "$200" scribbled beside it, a character drawn in sketch style looking at the chart with a realization expression, thick black marker outlines with hand-drawn wobble, marker color accents black blue green grey red</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Ceiling hit animation</div>
+            <div class="text">Character bops head against the red ceiling line with scribble bump effect and hand-drawn wobble, clock hand rotates showing limited hours, dollar signs stay confined below the ceiling line with marker boundary, 4-second repetitive motion with bounce, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Hourglass animation</div>
+            <div class="text">Sand grains labeled with dollar signs fall through hourglass neck one by one with marker drip effect, bottom fills slowly with coin doodles stacking, character points at bottleneck with subtle arm gesture, 6-second slow drip motion, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Block chart animation</div>
+            <div class="text">24 blocks draw themselves in layers with marker scribble fill, red bracket draws across work blocks with marker stroke effect, "$200" appears with scribble reveal, character's expression shifts to realization with hand-drawn lightbulb above head, 5-second sequential build-up, one-time with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 03 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 03</span>
+        <span class="scene-desc">Buying time — the wealthy trade money to free up time</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Here's what wealthy people do differently. They buy time. They pay someone to clean the house, cook the meals, drive the car, handle the admin. Not because they're lazy — because they know their time is better spent on high-value activities that only they can do. If you're worth $100 an hour, spending $20 an hour to outsource a task gives you a net gain of $80 an hour. That's leverage.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Outsourcing math on whiteboard</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn equation in marker scribble: "$100/hr (Your Value) - $20/hr (Outsource) = $80/hr (Net Gain)" with each part labeled, a hand-drawn arrow circling the "$80/hr" in green marker with a star doodle, a round-faced character drawn in sketch style on one side relaxed with hands behind head while a small doodle figure on the other side sweeps with a broom, thick black marker outlines with hand-drawn wobble, marker color accents black green red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Calendar with freed time</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn weekly calendar with days labeled in black marker, several time blocks have red marker "X" scribbled over tasks with "Outsourced" written across them, the freed blocks are highlighted with green marker highlighter scribble labeled "High-Value Time" with a star doodle, a character drawn in sketch style next to the calendar smiling and pointing at the green blocks, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Leverage seesaw</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn seesaw/lever, on one side a small figure labeled "$20 Task" in red marker is low to the ground, on the other side a large figure labeled "$100 Value" in green marker is high in the air with a smile, the fulcrum is labeled "Outsource" in blue marker with an underline, a character drawn in sketch style standing next to the lever pointing at the raised side with a knowing smirk, thick black marker outlines with hand-drawn wobble, marker color accents black red green blue</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Equation animation</div>
+            <div class="text">Each part of the equation draws itself sequentially with marker stroke effect, the "$80/hr" result gets a green marker circle drawn around it with star doodle appearing, character relaxes with subtle sketch breathing while small figure sweeps with hand-drawn animation, 5-second sequential reveal, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Calendar animation</div>
+            <div class="text">Red marker X's draw across task blocks one by one with scribble effect as if crossing out, green marker highlight strokes appear on freed blocks with highlighter smear effect, character smiles with sketch expression change, 6-second sequential freeing motion, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Seesaw animation</div>
+            <div class="text">Lever tips slowly as task side goes down and value side rises with hand-drawn wobble, character points with subtle arm sketch animation, green side reaches high with bounce easing, 4-second tipping motion, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 04 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 04</span>
+        <span class="scene-desc">Long-term thinking — decades vs days</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Another difference is the time horizon. Most people think in days and weeks. What am I doing this weekend? What's for dinner tonight? Wealthy people think in decades and generations. They make decisions today based on where they want to be in 10, 20, or 30 years. Every hour they invest, every skill they learn, every relationship they build — it's all viewed through a long-term lens. And compound interest works best when you give it time.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Timeline comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, two horizontal hand-drawn timelines, top timeline labeled "Average Person" in red marker showing small daily doodles (coffee cup, TV, phone) with scribble "Today" focus, bottom timeline labeled "Wealthy Mindset" in green marker showing a long hand-drawn arrow stretching from left to right with milestone markers at "Year 1", "Year 10", "Year 20", "Year 30" with small growing tree doodles, a character drawn in sketch style looking at both timelines and pointing at the bottom one, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Compound growth tree</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn tree with a tiny seed labeled "1 Hour Invested Today" in blue marker at the roots, the trunk grows upward with year labels "Year 5", "Year 10", "Year 20", the branches have dollar signs and coin doodles as leaves, a small character drawn in sketch style planting the seed at the bottom looking up at the full-grown tree with amazement, thick black marker outlines with hand-drawn wobble, marker color accents black blue green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Calendar vs decade visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, split screen, left side shows a hand-drawn monthly calendar with days circled in red marker labeled "Short-Term Focus", right side shows a hand-drawn decade timeline with years labeled "2030", "2040", "2050" in green marker with star milestones, a character drawn in sketch style in the middle turning their head from the calendar to the timeline with a dawning realization expression, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Timeline animation</div>
+            <div class="text">Top red timeline draws small daily doodles appearing rapidly with scribble effect, bottom green timeline draws a long arrow stretching right with milestone markers appearing one by one at each year with marker stroke reveal, character points at bottom timeline with arm gesture animation, 6-second contrasting reveal, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Tree growth animation</div>
+            <div class="text">Seed at roots glows briefly, tree grows slowly from seed to full size with hand-drawn sketch animation, year labels appear along trunk with marker reveal, coin leaves appear on branches with gentle wobble, character looks up with amazement expression, 6-second growth motion, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Calendar vs decade animation</div>
+            <div class="text">Left calendar circles pulse with red marker, right decade timeline draws with green marker stroke revealing future years, character's head turns slowly from left to right with sketch animation, realization expression develops, 5-second turning motion with ease-in-out, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 05 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 05</span>
+        <span class="scene-desc">Opportunity cost of time — the real cost of doing it yourself</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Every hour you spend doing something is an hour you're not doing something else. That's opportunity cost. If you spend 5 hours mowing your lawn to save $50, you're saying your time is worth $10 an hour. But if you could be earning $100 an hour doing your actual work, that $50 "saving" just cost you $500 in lost income. Rich people don't ask "how much does this cost?" They ask "what else could I be doing with this time?"
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Lawn mowing math</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn equation: "5 hrs mowing = $50 saved" in red marker with a scribble cross-out, below it "5 hrs working = $500 earned" in green marker with a circle and star doodle, a character drawn in sketch style holding a lawnmower doodle on one side looking tired, on the other side the same character at a desk doodle with dollar signs floating up, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Hour valuation scale</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn scale with "Mowing = $10/hr" in red marker on one side and "Working = $100/hr" in green marker on the other side, the green side is heavily tilted down showing value, three small hand-drawn coins falling off the red side labeled "Lost Income" in blue marker scribble, a character drawn in sketch style looking at the scale with a face-palm gesture, thick black marker outlines with hand-drawn wobble, marker color accents black red green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Fork in the road: choose your hour</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a single hour block drawn on the whiteboard with two hand-drawn paths leading from it, one path has a doodle of a lawnmower and "$10" scribbled in red, the other path has a doodle of a laptop and "$100" scribbled in green with a star, a round-faced character drawn in sketch style at the starting point holding a thinking pose with a question mark doodle above their head, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Equation comparison animation</div>
+            <div class="text">Red equation draws first with scribble cross-out appearing with marker stroke, green equation draws below with circle and star appearing, character transitions from tired lawn-mowing pose to desk work with dollar signs floating up, 5-second transformation animation, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Scale tipping animation</div>
+            <div class="text">Green $100/hr side tips down heavily with weight emphasis, coins fall off the red side with blue marker "Lost Income" label appearing, character does face-palm gesture with hand-drawn sketch animation, 4-second tipping motion with bounce, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Hour choice animation</div>
+            <div class="text">Hour block pulses at center, two paths draw themselves outward in marker stroke, lawnmower and laptop doodles appear on each path with their value labels fading in, character holds thinking pose with question mark pulsing above head, 5-second choice visualization, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 06 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 06</span>
+        <span class="scene-desc">Leverage — using other people's time and systems</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Real wealth comes from leverage. Leverage means getting more output than your input. A doctor earns $200 an hour for their own time. But a business owner earns money from 50 employees, even while sleeping. Leverage can come from people — hiring a team. From capital — investing money. From code — building software that works 24/7. Or from media — creating content that reaches millions while you make it once. The wealthy don't just work hard. They build systems that multiply their time.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Four leverage types</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, four hand-drawn boxes arranged in a grid labeled in marker scribble: "People" with stick figure doodles, "Capital" with coin stack doodle, "Code" with computer screen doodle, "Media" with play button and microphone doodle, each box has an arrow pointing up labeled "Multiplies Time" in green marker, a round-faced character drawn in sketch style in the center with arms spread looking at all four boxes with awe, thick black marker outlines with hand-drawn wobble, marker color accents black green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Sleeping business owner</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a character drawn in sketch style sleeping on a cloud doodle with "zzz" bubbles in blue marker, below the cloud a hand-drawn factory/building with gears turning and people doodles working inside, money stacks growing on the side labeled "While You Sleep" in green marker with circled emphasis, a clock showing nighttime with moon doodle, thick black marker outlines with hand-drawn wobble, marker color accents black blue green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Input vs output comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn chart with two bars, left bar labeled "Your Time Only" in red marker showing a short bar with a small "$" at top, right bar labeled "With Leverage" in green marker showing a tall bar reaching high with multiple "$" stacked on top with a star and rocket doodle, a hand-drawn arrow from a small figure to a large team of stick figures labeled "Leverage Multiplier" in blue marker underline, thick black marker outlines with hand-drawn wobble, marker color accents black red green blue</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Four boxes animation</div>
+            <div class="text">Four boxes draw themselves one by one with marker stroke effect, each fills with its doodle icon, green "Multiplies Time" arrows rise from each box with scribble motion, character in center looks around with awe expression and subtle head turn, 6-second sequential reveal, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Sleeping owner animation</div>
+            <div class="text">Character sleeps on cloud with gentle rising and falling breath animation, "zzz" bubbles float up with blue marker effect, factory gears turn below with people doodles moving, money stacks grow taller with coin stacking animation, 6-content peaceful contrast motion, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Bar chart animation</div>
+            <div class="text">Red left bar draws to short height, green right bar draws much taller reaching up with marker stroke, multiple "$" stack on top of green bar with star and rocket doodle appearing, leverage arrow draws from small figure to team with scribble effect, 5-second contrasting reveal, one-time with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 07 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 07</span>
+        <span class="scene-desc">Time freedom is the real wealth — not money</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Here's the truth that most people miss. Money is replaceable. You can always earn more. But time is finite. Every second that passes is gone forever. The wealthiest people in the world don't measure their wealth in dollars — they measure it in options. The option to wake up when they want. To spend the afternoon with their kids. To work on projects they actually care about. True wealth isn't a bank account number. It's having control over your own time.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Replaceable money vs finite time</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, split comparison, left side shows a hand-drawn dollar bill with a circular arrow around it labeled "Replaceable — Earn More" in green marker with a plus sign, right side shows a hand-drawn clock with sand spilling out and an X over it labeled "Finite — Gone Forever" in red marker with a sad face, a character drawn in sketch style in the middle looking at both with a serious realization expression, thick black marker outlines with hand-drawn wobble, marker color accents black green red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Options menu visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn menu board labeled "Wealth = Options" in green marker with underline, three hand-drawn menu items with checkboxes: "Wake Up When You Want" with a sun and bed doodle, "Spend Time with Family" with heart doodle, "Work on What Matters" with a star and lightbulb doodle, each has a green checkmark, a character drawn in sketch style next to the menu smiling with arms spread, thick black marker outlines with hand-drawn wobble, marker color accents black green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Vault with time inside</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn bank vault door slightly open with golden light shining out, inside instead of money stacks there are clock and hourglass doodles with "TIME" written across them in green marker, a character drawn in sketch style standing at the open vault door looking in with amazement, a small sign on the vault reads "Real Wealth" in blue marker with a star doodle, thick black marker outlines with hand-drawn wobble, marker color accents black green gold blue</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Replaceable vs finite animation</div>
+            <div class="text">Left dollar bill rotates with circular arrow animation in green marker, right clock spills sand with hand-drawn motion and red X appearing, character's expression shifts to serious realization with sketch animation, 5-second contrasting animation, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Options menu animation</div>
+            <div class="text">Menu board draws with marker stroke, three menu items appear one by one with checkboxes being checked with green marker checkmark effect, each item's doodle icon fades in with sketch animation, character smiles with arms spread wide, 6-second sequential reveal, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Vault opening animation</div>
+            <div class="text">Vault door slowly swings open with hand-drawn creak effect, golden light shines out with marker glow scribble, clocks and hourglasses inside pulse gently, character's amazement expression develops with wide eyes, 5-second reveal motion with ease-in-out, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 08 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 08</span>
+        <span class="scene-desc">Closing — start treating time as your most valuable asset</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        So here's the question you need to ask yourself from today. Am I treating my time like an expense — something to be spent and killed? Or am I treating it like an asset — something to be invested, multiplied, and protected? The shift isn't about becoming rich overnight. It's about changing how you see the one resource you can never get back. When you start treating every hour like it's precious, you stop wasting them. And that's when everything changes.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Time expense vs time asset</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, split screen with a vertical hand-drawn divider, left side labeled "Time as Expense" in red marker showing a character wasting time with TV doodle, phone doodle, and sofa scribble, coins falling through a hole, right side labeled "Time as Asset" in green marker showing the same character investing with a book doodle, laptop doodle, and growing plant, coins stacking up, a large hand-drawn arrow pointing from the left side to the right side with "Shift" written in blue marker, thick black marker outlines with hand-drawn wobble, marker color accents black red green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Clock as a treasure chest</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn clock repurposed as a treasure chest, the clock face is open like a lid with golden light spilling out, inside the clock are not coins but labeled assets — "Skills", "Relationships", "Health", "Growth" each scribbled in green marker with small icons, a character drawn in sketch style holding a single hour-labeled coin about to place it inside, thick black marker outlines with hand-drawn wobble, marker color accents black gold green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Character walking into a bright future</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn path leading from bottom left to a bright horizon on the right, a round-faced character drawn in sketch style walking confidently along the path holding a clock labeled "My Asset" in green marker, the path is lined with small milestone doodles — a book, a plant, a coin stack, a heart, a star — each labeled "Invested Hour" in blue marker, a large sun with hand-drawn rays labeled "Time Freedom" at the horizon, thick black marker outlines with hand-drawn wobble, marker color accents black green blue</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Shift animation</div>
+            <div class="text">Left side shows time-wasting with TV and phone doodles and coins falling through hole with marker drip, right side shows investing behavior with book and plant doodles and coins stacking up, the blue "Shift" arrow slides across with marker stroke effect pulling the character from left to right, 6-second transformation animation, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Clock treasure chest animation</div>
+            <div class="text">Clock lid slowly opens with hand-drawn creak effect revealing golden glow, labeled assets appear inside one by one with marker scribble reveal, character holds an hour-labeled coin and places it inside with gentle hand animation, 5-opening treasure reveal, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Walking into future animation</div>
+            <div class="text">Character walks along the path with confident step animation and sketch motion lines, milestone doodles appear along the path as character passes them with marker reveal, sun at horizon pulses with hand-drawn ray animation, 6-content forward motion, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- THUMBNAIL -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">Thumbnail <span class="badge gold">Video 05</span></div>
+    <div class="thumbnail-box">
+        <div class="label gold">Thumbnail Idea</div>
+        <p style="margin:0.3rem 0 0.8rem; color:#444; font-size:0.95rem;">Whiteboard-style close-up of a hand drawing a clock on one side morphing into a treasure chest filled with glowing assets, with a round-faced character drawn in sketch style in the center holding an hour-labeled coin and a knowing smile. Marker smudge effects on whiteboard background.</p>
+        <div class="label blue">Thumbnail Text</div>
+        <p style="margin:0.3rem 0 0.8rem; font-size:1.3rem; font-weight:700; color:#0f3460;">"TIME ASSET"</p>
+        <div class="label gold">AI Image Prompt</div>
+        <div class="prompt-box">whiteboard sketching style thumbnail, hand-drawn marker illustration on whiteboard background, left side shows a hand drawing a clock that is half-transformed into a treasure chest with golden marker glow spilling out, inside the chest "Skills" "Health" "Growth" written in green marker, a round-faced character drawn in sketch style in the center holding a single hour-labeled coin with a knowing smirk, right side has a path leading to a bright horizon, marker smudge effects on the whiteboard, clean composition with space for bold text overlay at the top, thick black marker outlines with hand-drawn wobble, color palette black marker whiteboard green gold blue accents</div>
+    </div>
+</div>
+
+<!-- SEO -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">SEO <span class="badge gold">Video 05</span></div>
+    <div class="seo-grid">
+        <div class="seo-card">
+            <h3>Title Options</h3>
+            <ul>
+                <li>Why Rich People Think About Time Differently</li>
+                <li>The One Thing Wealthy People Value More Than Money</li>
+                <li>Stop Trading Time for Money (The Shift That Builds Wealth)</li>
+                <li>How Rich People Use Time to Get Richer (While You Stay Stuck)</li>
+                <li>The Time Mindset That Separates the Rich from Everyone Else</li>
+            </ul>
+        </div>
+        <div class="seo-card">
+            <h3>Description</h3>
+            <div class="seo-desc">Two people. Same income. One becomes wealthy, one doesn't. The difference isn't luck or intelligence — it's how they think about time. In this whiteboard video, we break down the fundamental mindset shift that separates the wealthy from everyone else: treating time as an asset instead of an expense.</div>
+            <div class="seo-desc">You'll learn the hourly wage ceiling that keeps most people trapped, why wealthy people buy time instead of saving it, how leverage multiplies your hours, and the opportunity cost of doing everything yourself. The goal isn't to become a millionaire overnight — it's to change how you see the one resource you can never get back.</div>
+        </div>
+        <div class="seo-card tags">
+            <h3>Tags (30)</h3>
+            <ul>
+                <li>time vs money</li><li>rich people mindset</li><li>wealthy habits</li><li>time management rich</li><li>money psychology</li><li>wealth mindset</li><li>opportunity cost</li><li>buying time</li><li>leverage wealth</li><li>how rich people think</li><li>time asset</li><li>financial freedom</li><li>passive income</li><li>wealth building</li><li>millionaire mindset</li><li>time leverage</li><li>hourly wage trap</li><li>outsourcing wealth</li><li>long term thinking</li><li>compound interest time</li><li>rich vs poor mindset</li><li>wealth psychology</li><li>financial independence</li><li>time freedom</li><li>wealth creation</li><li>personal finance</li><li>money habits</li><li>success mindset</li><li>financial education</li><li>think like the rich</li>
+            </ul>
+        </div>
+        <div class="seo-card">
+            <h3>Keywords (15)</h3>
+            <ul>
+                <li>why rich people value time</li><li>time vs money mindset</li><li>wealthy people time habits</li><li>opportunity cost of time</li><li>how to buy time wealth</li><li>leverage your time</li><li>hourly wage ceiling</li><li>rich mindset vs poor mindset</li><li>time as an asset</li><li>financial freedom through time</li><li>money psychology wealthy</li><li>long term thinking wealth</li><li>build systems not hours</li><li>wealth building habits</li><li>think rich time management</li>
+            </ul>
+        </div>
+        <div class="seo-card" style="grid-column: span 2;">
+            <h3>Hashtags (7)</h3>
+            <ul>
+                <li>#TimeAsset</li><li>#WealthMindset</li><li>#MoneyPsychology</li><li>#RichPeopleThink</li><li>#FinancialFreedom</li><li>#TimeVsMoney</li><li>#PersonalFinance</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- VOICEOVER NOTES -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">AI Voiceover Notes <span class="badge gold">Video 05</span></div>
+    <div class="vonote">
+        <ul>
+            <li><strong>Tone:</strong> Thoughtful, eye-opening, slightly philosophical but grounded in practical examples, shifts from revealing the problem to empowering solution</li>
+            <li><strong>Pace:</strong> Moderate and deliberate, pause after key contrasts ("money is replaceable — but time is finite"), slower and more reflective on the closing scene</li>
+            <li><strong>Emphasis:</strong> "time is finite," "leverage," "buy time," "opportunity cost," "shift," "asset vs expense," "control over your own time"</li>
+            <li><strong>Duration:</strong> ~950 words at 150 wpm = ~6 minutes (with pauses, est. 3-4 min final video)</li>
+        </ul>
+    </div>
+</div>
+
+<div style="margin-top:1.5rem; padding:1rem; background:#fff3cd; border-radius:8px; border-left:4px solid #ffc107;">
+    <strong style="color:#856404;">Generated using <code>upcoming_video_instructions.md</code></strong>
+    <p style="color:#856404; font-size:0.85rem; margin-top:0.3rem;">8 scenes · 1 voiceover + 3 image prompts + 3 AI video prompts per scene · Total: 24 images · 24 video prompts · Whiteboard sketching style</p>
+</div>
+
+<footer>MoneyMuse &mdash; Finance explained simply through animation &bull; Video 05 &bull; Generated via upcoming_video_instructions.md</footer>
+
+</div>
+</body>
+</html>

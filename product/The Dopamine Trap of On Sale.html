@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dopamine Trap of "On Sale" | MoneyMuse</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #f4f6f9; color: #1a1a2e; padding: 2rem 1rem; }
+.container { max-width: 1000px; margin: 0 auto; }
+h1 { font-size: 2rem; font-weight: 700; color: #0f3460; margin-bottom: 0.3rem; }
+.subtitle { color: #555; font-size: 1rem; margin-bottom: 2rem; border-left: 4px solid #16c79a; padding-left: 1rem; }
+.badge { font-size: 0.75rem; font-weight: 600; background: #16c79a; color: #fff; padding: 0.2rem 0.7rem; border-radius: 20px; display: inline-block; }
+.badge.gold { background: #ff8c42; }
+.badge.blue { background: #4a7cff; }
+.badge.image { background: #9b59b6; color: #fff; }
+.badge.video { background: #e74c3c; color: #fff; }
+.section-header { font-size: 1.2rem; font-weight: 600; color: #0f3460; background: #e8ecf4; padding: 0.7rem 1.2rem; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.scene { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #2c3e50; }
+.scene-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+.scene-num { font-weight: 700; color: #2c3e50; font-size: 0.9rem; }
+.scene-desc { font-style: italic; color: #555; font-size: 0.9rem; }
+.voiceover { background: #f0f4ff; border-radius: 6px; padding: 0.8rem 1rem; margin-top: 0.7rem; font-size: 0.95rem; line-height: 1.6; color: #1a1a2e; border-left: 3px solid #4a7cff; }
+.voiceover-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #4a7cff; margin-bottom: 0.3rem; }
+.prompt-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; margin-bottom: 0.2rem; margin-top: 0.6rem; padding: 0.15rem 0.6rem; border-radius: 4px; display: inline-block; }
+.prompt-label.image { background: #9b59b6; }
+.prompt-label.video { background: #e74c3c; }
+.prompt-box { background: #f9fafc; border-radius: 6px; padding: 0.8rem 1rem; font-size: 0.88rem; line-height: 1.5; color: #444; font-family: 'Courier New', monospace; border-left: 3px solid #2c3e50; white-space: pre-wrap; margin-bottom: 0.5rem; }
+.prompt-box.video-prompt { border-left-color: #e74c3c; background: #fef5f5; }
+.img-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem; }
+.img-item { background: #f9fafc; border-radius: 6px; padding: 0.7rem; border-left: 3px solid #9b59b6; }
+.img-item .label { font-size: 0.7rem; font-weight: 600; color: #9b59b6; margin-bottom: 0.2rem; }
+.img-item .text { font-size: 0.82rem; color: #444; font-family: 'Courier New', monospace; line-height: 1.4; white-space: pre-wrap; }
+.vid-item { background: #fef5f5; border-radius: 6px; padding: 0.7rem; border-left: 3px solid #e74c3c; }
+.vid-item .label { font-size: 0.7rem; font-weight: 600; color: #e74c3c; margin-bottom: 0.2rem; }
+.vid-item .text { font-size: 0.82rem; color: #444; font-family: 'Courier New', monospace; line-height: 1.4; }
+.thumbnail-box { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #ff8c42; margin-bottom: 1rem; }
+.thumbnail-box .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+.thumbnail-box .label.gold { color: #ff8c42; }
+.thumbnail-box .label.blue { color: #4a7cff; }
+.seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.seo-card { background: #fff; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.seo-card h3 { font-size: 0.9rem; color: #0f3460; margin-bottom: 0.5rem; }
+.seo-card ul { list-style: none; }
+.seo-card li { font-size: 0.88rem; color: #444; padding: 0.25rem 0; border-bottom: 1px solid #f0f0f0; }
+.seo-card li:last-child { border-bottom: none; }
+.seo-card.tags li { display: inline-block; background: #eef2f7; padding: 0.2rem 0.6rem; border-radius: 4px; margin: 0.2rem; font-size: 0.8rem; border: none; }
+.seo-desc { font-size: 0.85rem; line-height: 1.6; color: #444; margin-bottom: 0.5rem; }
+.vonote { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.vonote ul { list-style: none; font-size: 0.92rem; line-height: 1.8; color: #444; }
+.meta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.meta-tag { background: #e8ecf4; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; }
+.meta-tag.style { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+footer { margin-top: 3rem; text-align: center; font-size: 0.85rem; color: #999; padding: 1rem 0; }
+@media (max-width: 700px) { .seo-grid { grid-template-columns: 1fr; } .img-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>The Dopamine Trap of "On Sale"</h1>
+<div class="subtitle">Whiteboard sketching style — Hand-drawn marker animation on whiteboard</div>
+
+<div class="meta-row">
+    <span class="meta-tag">Category: Money Psychology</span>
+    <span class="meta-tag">Est. Length: ~3-4 min</span>
+    <span class="meta-tag style">Style: Whiteboard Sketching</span>
+    <span class="meta-tag">Scenes: 8</span>
+    <span class="meta-tag">Images: 24</span>
+    <span class="meta-tag">Video Prompts: 24</span>
+</div>
+
+<!-- SCENE 01 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 01</span>
+        <span class="scene-desc">Character sees a "70% OFF" sign and feels a rush of excitement</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        You see it. A big red "70% OFF" sign staring at you from a store window. Your heart skips. Your eyes widen. You feel this sudden urge to buy something you didn't even want 10 seconds ago. And you're not weak for feeling this. You're human. Because that sign isn't just a discount — it's a trigger. And it's aimed directly at your brain's reward system.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Wide shot</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a round-faced cartoon character drawn in sketch style standing outside a simple drawn storefront, eyes wide and mouth slightly open staring at a large "70% OFF" sign scribbled in red marker in the window, small hand-drawn sparkle doodles floating around the character's head, the storefront is minimal sketch lines, thick black marker outlines with slight hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Close-up character focus</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, close-up of a round-faced cartoon character drawn in sketch style, pupils drawn as dollar signs with marker scribble, a red marker "SALE" tag reflection sketched in the eyes, small hand-drawn dopamine sparkle lines radiating from the head in green marker, excited expression with raised eyebrows drawn in black marker, thick marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Brain chemistry metaphor</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, left side shows a simple hand-drawn brain with yellow marker dots and lightning bolt lines, a small "D" scribbled beside it in green marker, right side shows a "70% OFF" tag drawn in red marker with a hand-drawn arrow shooting from the tag into the brain, the arrow labeled "trigger" in blue marker scribble, thick black marker outlines with hand-drawn wobble, marker color accents black yellow red green blue</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Wide shot animation</div>
+            <div class="text">Slow zoom into the character's face as the "70% OFF" sign pulses with a gentle hand-drawn wobble effect as if freshly sketched, sparkle doodles fade in and out around the head with marker scribble effect, 4-second smooth motion, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Close-up animation</div>
+            <div class="text">Dollar sign pupils pulse with wobble animation, dopamine sparkle lines rotate slowly around the character's head as if drawn in motion, subtle marker-style blink with scribble closure, 5-second smooth motion with gentle ease-in-out, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Brain trigger animation</div>
+            <div class="text">Arrow draws itself from the sale tag into the brain in real-time marker stroke effect with a brief scribble flash, hand-drawn dots inside brain pulse rhythmically with marker wobble, 4-second motion with bounce easing on the arrow impact, one-time animation with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 02 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 02</span>
+        <span class="scene-desc">Explaining how dopamine works — the reward chemical</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Here's what's actually happening inside your head. There's a chemical called dopamine. It's your brain's reward molecule. It gets released when you do something that your brain thinks is good for survival — like eating, winning, or finding a deal. The problem is, your brain doesn't distinguish between "I found a bargain" and "I just secured resources for survival." To your ancient wiring, a sale is the same as finding food. So it floods you with feel-good chemicals before you even buy anything.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Brain with dopamine illustration</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn brain in cross-section with yellow marker drops falling from the top labeled "dopamine" in green marker scribble with a hand-drawn arrow, a "70% OFF" tag sketched in red marker on the left sending a hand-drawn signal line to the brain with zigzag marker strokes, a round-faced character drawn in sketch style on the right with a blissful expression, thick black marker outlines with hand-drawn wobble, marker color accents black yellow green red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Evolutionary comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, split screen with a hand-drawn vertical divider line, left side shows a cave man character drawn in sketch style finding a pile of doodle fruit with sparkle scribbles, right side shows a modern round-faced character in sketch style looking at a red marker "SALE" sign with matching sparkle doodles, both have hand-drawn dopamine lightning bolts above their heads in yellow marker, thick black marker outlines with hand-drawn wobble, marker color accents black red green yellow</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Reward system flowchart</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a simple hand-drawn flowchart with three box doodles connected by marker arrows, box 1 "See Sale" scribbled in red marker, box 2 "Brain Trigger" in yellow marker with a small hand-drawn lightning bolt, box 3 "Dopamine Rush" in green marker with a happy face doodle, below box 3 a character drawn in sketch style floating with star doodles around, thick black marker outlines with hand-drawn wobble, marker color accents black red yellow green</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Brain chemistry animation</div>
+            <div class="text">Dopamine drops fall from top into brain one by one with gentle marker-scribble pulse effect, signal line from sale tag draws itself to the brain in real-time marker stroke, character's expression shifts to blissful slowly with hand-drawn animation, 5-second smooth motion, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Split comparison animation</div>
+            <div class="text">Both sides animate identically — sparkle scribbles appear simultaneously over cave man and modern character as if freshly drawn, dopamine bolts flash above both heads with marker wobble effect, gentle parallax scroll moving both scenes left and right with sketch-like jitter, 6-second smooth motion with ease-in-out</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Flowchart animation</div>
+            <div class="text">Marker arrows draw themselves sequentially from box 1 to 2 to 3 with a scribble effect traveling along each arrow, character at bottom begins to float with star doodles orbiting with hand-drawn wobble, 4-second sequential animation with marker stroke reveal, one-time with hold at end</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 03 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 03</span>
+        <span class="scene-desc">The anchoring effect — original price vs sale price manipulation</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Stores don't just rely on dopamine. They also use something called the anchoring effect. They show you a high "original price" first — $200. Then they cross it out and write $79.99. Your brain compares the sale price to the anchor, not to the actual value of the item. So $79.99 feels like a steal. But here's the question nobody asks: was it ever really worth $200? Or was that number put there just to make $79.99 feel good?
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Price tag comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn price tag shown twice, left side shows "$200" scribbled in faded grey marker with a thick red marker X crossed through it, right side shows "$79.99" in bold green marker with a red marker circle around it and "SALE" scribbled above in red, a round-faced character drawn in sketch style looking back and forth between them with a confused expression, hand-drawn arrow connecting the two, thick black marker outlines with hand-drawn wobble, marker color accents black grey red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Anchor metaphor visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn anchor labeled "Original $200" in grey marker scribble sinking in blue marker crosshatch water at the bottom, floating above the water is a small hand-drawn boat labeled "Sale $79.99" in green marker with the character drawn in sketch style inside smiling and waving, a hand-drawn anchor chain connecting the boat to the anchor showing the psychological pull, thick black marker outlines with hand-drawn wobble, marker color accents black grey blue green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Brain scale balancing</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn balance scale with doodle wobble, left side has a heavy sketched weight labeled "Original $200" in red marker and tilted down with scribble lines showing weight, right side has a light sketched weight labeled "Sale $79.99" in green marker and tilted up, a round-faced character drawn in sketch style pointing at the right side with wide excited eyes, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Price tag animation</div>
+            <div class="text">Red marker X draws itself across "$200" with a swipe scribble effect, then "$79.99" appears with a green marker stroke reveal, character's head turns slowly left to right with sketch wobble comparing, 4-second smooth motion with marker-drawn feel, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Anchor metaphor animation</div>
+            <div class="text">Anchor slowly sinks with a heavy hand-drawn wobble, boat bobs gently on water surface with marker sketch jitter, character's waving arm animates with scribble effect, water ripple lines drawn in blue marker with wave motion, 6-second smooth motion with bounce, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Scale balancing animation</div>
+            <div class="text">Scale tips slowly from balanced to tilted as weights appear with marker scribble fill, character points with a subtle arm movement drawn in sketch style, gentle wobble on the scale as it settles with marker line jitter, 5-second ease-in-out motion, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 04 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 04</span>
+        <span class="scene-desc">Scarcity tactics — limited time and limited stock urgency</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Then there's the scarcity play. "Limited time offer." "Only 3 left in stock." "Sale ends tonight." These words create urgency. Your brain interprets scarcity as value — if it's running out, it must be worth getting. And your fear of missing out overrides your rational thinking. Suddenly, you're not evaluating whether you need the item. You're competing with invisible strangers for the chance to give a store your money.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Countdown timer scene</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn countdown timer showing "2:34:12" in red marker scribble with "SALE ENDS SOON" written beside it in black marker underline, a round-faced character drawn in sketch style looking panicked with hand-drawn sweat drops in blue marker, hands raised in worry drawn with thick black marker, behind him a hand-drawn shelf with one remaining item highlighted by sketch spotlight rays, thick black marker outlines with hand-drawn wobble, marker color accents black red blue green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — FOMO brain visualization</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn brain split in half with a vertical scribble divider, left half is calm labeled "Logic" in blue marker with a small hand-drawn "No" symbol, right half is panicked labeled "FOMO" in red marker with hand-drawn alarm bell doodles and exclamation marks drawn with scribble emphasis, the red half is overpowering the blue half with marker crosshatch fill, a small character silhouette drawn in sketch style in the middle looking torn, thick black marker outlines with hand-drawn wobble, marker color accents black blue red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Race against others metaphor</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, three simple hand-drawn silhouette figures running toward a single item on a pedestal drawn in sketch style, the main character in sketch style is in front with a determined expression drawn in black marker, the other two are faded marker silhouettes, the item has hand-drawn glow scribble lines, a finish line banner above reads "LAST CHANCE" in red marker, thick black marker outlines with hand-drawn wobble, marker color accents black red green grey</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Timer countdown animation</div>
+            <div class="text">Countdown numbers flip rapidly with hand-drawn marker stroke effect 2:34:12 to 2:34:11 etc, character's sweat drops appear with blue marker drip animation, spotlight on remaining item pulses with sketch ray scribble effect, 5-second motion with urgency feel, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Brain split animation</div>
+            <div class="text">Red FOMO side slowly expands pushing the blue Logic side smaller with marker scribble fill, alarm bell doodles ring with subtle sketch shake animation, exclamation marks pulse with hand-drawn wobble emphasis, 4-second smooth push motion with marker jitter, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Race animation</div>
+            <div class="text">Characters run forward with gentle sketch bob animation, main character pulls ahead with marker stroke motion lines, item on pedestal glows with expanding hand-drawn scribble pulse, 5-second motion with bounce easing, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 05 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 05</span>
+        <span class="scene-desc">The real cost of "savings" — money spent on things you didn't need</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Here's the uncomfortable math. You walk into a store, see a "Buy One Get One Free" deal, and walk out spending $50 on something you never planned to buy. You feel good because you "saved" $50. But you didn't save anything. You spent $50. The store's goal isn't to save you money — it's to get you to spend money you didn't plan to spend. And they're very good at it.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — BOGO deal visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large "BUY ONE GET ONE FREE" sign scribbled in bright red marker with underline emphasis, below it two hand-drawn items with a red marker arrow connecting them, one item has a hand-drawn checkmark and the other has a "FREE" badge drawn in green marker with scribble circle, a round-faced character drawn in sketch style holding both items with a confused expression slowly realizing the trap, hand-drawn dollar signs floating away from a doodle wallet with motion scribble lines, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Wallet emptying animation concept</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn wallet on the left with money doodles flying out of it like birds with scribble motion lines, each bill has a small sale tag drawn in red marker, on the right a pile of unused hand-drawn items (a lamp, a blender, shoes, a gadget) with price tag doodles still attached, the character drawn in sketch style in the middle looking at the pile with regret expression, thick black marker outlines with hand-drawn wobble, marker color accents black red green grey</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Savings illusion scale</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn scale with "Money Saved" scribbled on one side showing a small "$20" in green marker and "Money Spent" on the other side showing a large "$50" in red marker circled with emphasis, the scale is heavily tilted toward spent with marker crosshatch showing the weight, under the scale a round-faced character drawn in sketch style looking up with a dawning realization expression, "vs" written in blue marker between the two labels, thick black marker outlines with hand-drawn wobble, marker color accents black green red blue</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — BOGO realization animation</div>
+            <div class="text">Sign pulses red with hand-drawn marker wobble, items slide into view one by one as if being drawn in real-time with checkmark and FREE badge appearing with scribble effect, character's expression slowly shifts from happy to confused with sketch animation, hand-drawn dollar signs drift away from wallet with marker stroke motion, 5-second slow realization motion, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Wallet draining animation</div>
+            <div class="text">Bills fly out of wallet one at a time with sale tags fluttering and scribble motion lines, each flies to the pile of unused items with hand-drawn arc trails, character's expression shifts to regret with sketch fade, items have a slight hand-drawn wobble, 6-second sequential motion with marker stroke feel, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Scale tipping animation</div>
+            <div class="text">Scale slowly tips from balanced to heavily tilted as "$50" weight drops with marker scribble gravity effect, character's head tilts up with realization expression drawn in sketch style, hand-drawn wobble on the scale as it settles, 4-second ease-out motion with marker line jitter, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 06 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 06</span>
+        <span class="scene-desc">How stores design the shopping experience to maximize spending</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Stores design every inch of the experience to keep you spending. The music is calibrated. The lighting highlights certain products. The expensive items are at eye level. The cheap impulse buys are at the checkout. There's a reason the milk is in the back of the grocery store — they want you to walk past everything else first. You're not shopping. You're navigating an environment that was scientifically designed to separate you from your money.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Store layout from above</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, top-down view of a simple hand-drawn store layout showing the entrance as a door doodle, the path customers take marked with a dotted marker line, high-margin items at eye level drawn on shelf doodles, cheap impulse items at the checkout counter drawn in red marker with circles, milk at the far back end drawn as a carton doodle, the winding path passes every section drawn with marker arrows, a small character figure drawn in sketch style following the dotted path, thick black marker outlines with hand-drawn wobble, marker color accents black red blue green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Shopping manipulation layers</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a round-faced character drawn in sketch style standing in the center with hand-drawn arrows pointing at him from all directions, each arrow has a label scribbled in marker — "Lighting", "Music", "Colors", "Scents", "Layout", "Checkout Traps", the character looks overwhelmed with swirl doodle lines above his head drawn in black marker, thick black marker outlines with hand-drawn wobble, marker color accents black red green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Impulse checkout display</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, close-up of a hand-drawn checkout counter with small doodle items displayed — candy bars, gum, small gadgets, magazines, all with small price tag scribbles and "impulse buy" hand-drawn arrows pointing to them, a hand doodle reaching for one, a small character silhouette drawn in sketch style watching with a warning expression, thick black marker outlines with hand-drawn wobble, marker color accents black red yellow green</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Store map animation</div>
+            <div class="text">Dotted marker path draws itself sequentially from entrance through each section ending at milk with real-time scribble effect, the character walks along the path with small hand-drawn step animation, impulse items glow red at checkout with marker pulse, 6-second sequential reveal with marker stroke motion, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Manipulation arrows animation</div>
+            <div class="text">Marker arrows draw themselves shooting toward character from all directions one by one with labels appearing as scribble text, swirl doodle lines above character's head spin faster with each arrow adding marker stroke layers, character's expression becomes more overwhelmed with sketch animation, 5-second sequential buildup with hand-drawn feel, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Checkout counter animation</div>
+            <div class="text">Hand-drawn items on counter pulse gently one by one with marker wobble drawing attention, hand doodle reaches slowly toward an item with sketch motion lines, warning character shakes head subtly with hand-drawn animation, 4-second gentle motion with hesitation feel, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 07 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 07</span>
+        <span class="scene-desc">The pause technique — how to break the impulse cycle</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        So how do you beat a system that's literally designed to exploit your brain chemistry? One simple rule: the 24-hour pause. When you see something on sale and feel that dopamine surge, stop. Don't buy it. Walk away. Tell yourself you can come back tomorrow if you still want it. In 24 hours, the dopamine fades. And you can ask yourself the real question: do I need this, or does my brain just want the reward of buying it? Most of the time, the answer will surprise you.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — 24-hour clock visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn round clock showing 24 hour markings with "PAUSE" written in bold green marker across the center with underline, a round-faced character drawn in sketch style standing beside the clock with a calm expression and one hand raised in a "stop" gesture drawn in black marker, the sale tag on the other side of the clock drawn in faded grey marker with scribble lines showing it fading, a small hand-drawn brain above the character with a peaceful "zzz" bubble in blue marker, thick black marker outlines with hand-drawn wobble, marker color accents black green grey blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Dopamine curve graph</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn line graph showing a high peak labeled "Impulse" in red marker with scribble arrow, then a line dropping down to a flat level labeled "24h Later — Clarity" in green marker with circled emphasis, a character drawn in sketch style standing at the end point with a calm smile and a hand-drawn lightbulb above head with sparkle scribbles, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Brain before/after pause</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, split screen with a hand-drawn divider, left side shows a hand-drawn brain with chaotic lightning bolt scribbles and dollar sign doodles floating around it labeled "Now" in red marker, right side shows the same brain drawn calm with a peaceful expression and a hand-drawn green checkmark labeled "24h Later" in green marker, a hand-drawn arrow in the middle with "PAUSE" written on it in blue marker with underline, a character silhouette drawn in sketch style below looking from chaos to calm, thick black marker outlines with hand-drawn wobble, marker color accents black red green blue</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Pause clock animation</div>
+            <div class="text">Clock hand slowly rotates through 24 hours with hand-drawn wobble, "PAUSE" text appears with green marker stroke reveal, sale tag on the side gradually fades from red to grey marker with scribble eraser effect, character maintains calm with subtle sketch breathing motion, 6-second slow smooth motion with marker line jitter, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Dopamine curve animation</div>
+            <div class="text">Line draws from left to right in real-time marker stroke rising to a red peak, then curves down to a green flat level with scribble fill, character appears at the end with lightbulb fading in as hand-drawn sketch, 5-second draw animation with marker feel and ease-in-out, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Brain transformation animation</div>
+            <div class="text">Left brain has chaotic scribble pulses and dollar sign doodles floating with hand-drawn wobble, "PAUSE" arrow slides in from middle with marker stroke effect, right side brain calms with a gentle green marker crosshatch spreading across it, 5-second transition animation with sketch morph effect, one-time smooth</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 08 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 08</span>
+        <span class="scene-desc">Closing — spending with intention vs being manipulated</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Look, sales aren't evil. Getting a good deal on something you actually need is smart. The trap is when the sale makes the decision for you. When you buy because it's "on sale," not because you wanted it. The next time you see a big red discount sign, pause. Recognize the dopamine. Recognize the anchoring. Recognize the scarcity. And then make a choice — not because your brain chemistry was hijacked, but because you decided. That's the difference between spending and being spent on.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Empowered character walking away</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a round-faced character drawn in sketch style walking away from a faded "SALE" sign drawn in grey marker with a confident smile, one hand in pocket, the other holding a single coin doodle, above the head a hand-drawn lightbulb with sparkle scribbles in green marker and a small brain doodle with a checkmark, the sale sign behind is crossed out with a red marker X, thick black marker outlines with hand-drawn wobble, marker color accents black green grey red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Brain gears turning consciously</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a head drawn in profile sketch showing a hand-drawn brain inside with three labeled gear doodles — "Dopamine Awareness" in blue marker, "Value Check" in green marker, "Intention" in black marker, the gears are connected with hand-drawn chain lines and turning with scribble motion lines, a small green marker checkmark above the brain, character has a calm knowing smile drawn in sketch style, thick black marker outlines with hand-drawn wobble, marker color accents black green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Control center metaphor</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a character drawn in sketch style sitting at a simple hand-drawn control panel with three labeled button doodles — "Need It" in green marker, "Want It" in yellow marker, "On Sale Trick" in red marker with an X scribbled through it, the character is pressing the green button with one finger drawn in black marker and smiling with sketch happiness, behind him the "SALE" sign is small and drawn in faded grey marker in the distance, thick black marker outlines with hand-drawn wobble, marker color accents black green yellow red grey</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Walking away animation</div>
+            <div class="text">Character walks forward with gentle hand-drawn step animation and sketch motion lines, sale sign behind fades to grey with scribble eraser effect and gets smaller, lightbulb and brain icon float above head with gentle bob and hand-drawn wobble, 6-second smooth confident walk with marker jitter, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Gears turning animation</div>
+            <div class="text">Three hand-drawn gear doodles rotate smoothly with labels appearing one by one as marker scribble, checkmark fades in with green marker stroke effect, character's smile subtly widens with sketch animation, 5-second smooth mechanical motion with hand-drawn feel, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Control panel animation</div>
+            <div class="text">Character's finger presses the green button with a subtle marker glow pulse and scribble effect, red button stays dim with X visible drawn in marker, sale sign in background shrinks slowly with sketch fade, 4-second deliberate pressing motion with hand-drawn wobble, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- THUMBNAIL -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">Thumbnail <span class="badge gold">Video 04</span></div>
+    <div class="thumbnail-box">
+        <div class="label gold">Thumbnail Idea</div>
+        <p style="margin:0.3rem 0 0.8rem; color:#444; font-size:0.95rem;">Whiteboard-style close-up of a hand holding a black marker drawing a large brain on the left and a "SALE" tag with a red X through it on the right, the round-faced character drawn in sketch style in the center with one hand raised in a "pause" gesture and a knowing smirk. Whiteboard background with marker smudge effects.</p>
+        <div class="label blue">Thumbnail Text</div>
+        <p style="margin:0.3rem 0 0.8rem; font-size:1.3rem; font-weight:700; color:#0f3460;">"THE DOPAMINE TRAP"</p>
+        <div class="label gold">AI Image Prompt</div>
+        <div class="prompt-box">whiteboard sketching style thumbnail, hand-drawn marker illustration on whiteboard background, a round-faced character drawn in sketch style standing centered with one hand raised in a calm stop/pause gesture and a knowing smirk drawn in black marker, on the left a large hand-drawn brain with a lightning bolt scribble and a "SALE" tag drawn in red marker with a thick marker X crossed through it, on the right a large hand-drawn green checkmark with circled emphasis, marker smudge effects on the whiteboard, clean composition with space for bold text overlay at the top, thick black marker outlines with hand-drawn wobble, color palette black marker whiteboard green red accents</div>
+    </div>
+</div>
+
+<!-- SEO -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">SEO <span class="badge gold">Video 04</span></div>
+    <div class="seo-grid">
+        <div class="seo-card">
+            <h3>Title Options</h3>
+            <ul>
+                <li>The Dopamine Trap of "On Sale" (Your Brain Hacked)</li>
+                <li>Why "70% OFF" Hijacks Your Brain — The Science Explained</li>
+                <li>Stop Falling for Sales: The Psychology Stores Don't Want You to Know</li>
+                <li>How Your Brain Gets Tricked by Every Discount Sign</li>
+                <li>The Neuroscience Behind Why You Can't Resist a Sale</li>
+            </ul>
+        </div>
+        <div class="seo-card">
+            <h3>Description</h3>
+            <div class="seo-desc">That "70% OFF" sign isn't just a discount — it's a psychological trigger aimed directly at your brain's reward system. In this video, we break down the neuroscience of why sales make you buy things you don't need, the anchoring effect that makes sale prices feel like steals, and the scarcity tactics that create fake urgency.</div>
+            <div class="seo-desc">You'll learn the simple 24-hour pause technique to break the impulse cycle, how stores design every inch of the shopping experience to maximize spending, and the difference between spending with intention versus being manipulated by your own brain chemistry. No judgment — just awareness.</div>
+        </div>
+        <div class="seo-card tags">
+            <h3>Tags (30)</h3>
+            <ul>
+                <li>dopamine trap</li><li>sale psychology</li><li>why you buy on sale</li><li>shopping addiction</li><li>money psychology</li><li>retail therapy</li><li>impulse buying</li><li>consumer psychology</li><li>brain chemistry shopping</li><li>fomo spending</li><li>anchoring effect</li><li>scarcity marketing</li><li>retail manipulation</li><li>marketing psychology</li><li>neuroscience shopping</li><li>buying triggers</li><li>how stores trick you</li><li>sale trap</li><li>personal finance</li><li>spending habits</li><li>financial psychology</li><li>retail therapy truth</li><li>discount psychology</li><li>consumer behavior</li><li>saving money tips</li><li>budgeting psychology</li><li>financial education</li><li>money mindset</li><li>behavioral finance</li><li>smart shopping habits</li>
+            </ul>
+        </div>
+        <div class="seo-card">
+            <h3>Keywords (15)</h3>
+            <ul>
+                <li>dopamine and shopping</li><li>sale psychology explained</li><li>why sales trick your brain</li><li>anchoring effect shopping</li><li>scarcity marketing tactics</li><li>impulse buying psychology</li><li>retail store manipulation</li><li>neuroscience of spending</li><li>consumer psychology 2025</li><li>how to stop impulse buying</li><li>24 hour rule shopping</li><li>fomo spending trap</li><li>money psychology finance</li><li>behavioral finance basics</li><li>retail therapy truth</li>
+            </ul>
+        </div>
+        <div class="seo-card" style="grid-column: span 2;">
+            <h3>Hashtags (7)</h3>
+            <ul>
+                <li>#DopamineTrap</li><li>#SalePsychology</li><li>#MoneyMindset</li><li>#PersonalFinance</li><li>#ConsumerPsychology</li><li>#FinancialEducation</li><li>#SmartSpending</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- VOICEOVER NOTES -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">AI Voiceover Notes <span class="badge gold">Video 04</span></div>
+    <div class="vonote">
+        <ul>
+            <li><strong>Tone:</strong> Conversational, eye-opening, slightly playful but educational, shifts to empowering at the solution</li>
+            <li><strong>Pace:</strong> Moderate with pauses after key reveals ("that sign isn't just a discount — it's a trigger"), speed up slightly on the store design section, slow down on the solution</li>
+            <li><strong>Emphasis:</strong> "dopamine", "70% OFF", "anchoring effect", "scarcity", "didn't even want", "24-hour pause", "intention"</li>
+            <li><strong>Duration:</strong> ~900 words at 150 wpm = ~6 minutes (with pauses, est. 3-4 min final video)</li>
+        </ul>
+    </div>
+</div>
+
+<div style="margin-top:1.5rem; padding:1rem; background:#fff3cd; border-radius:8px; border-left:4px solid #ffc107;">
+    <strong style="color:#856404;">Generated using <code>upcoming_video_instructions.md</code></strong>
+    <p style="color:#856404; font-size:0.85rem; margin-top:0.3rem;">8 scenes · 1 voiceover + 3 image prompts + 3 AI video prompts per scene · Total: 24 images · 24 video prompts · Whiteboard sketching style</p>
+</div>
+
+<footer>MoneyMuse &mdash; Finance explained simply through animation &bull; Generated via upcoming_video_instructions.md</footer>
+
+</div>
+</body>
+</html>
