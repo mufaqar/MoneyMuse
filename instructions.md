@@ -132,15 +132,14 @@ Rules:
 - The character should be a simple round-faced cartoon man similar to animated finance explainer videos
 
 Style requirements for every prompt:
-- Simple 2D cartoon finance explainer illustration
-- Flat vector style
-- Minimal shading
-- Bold outlines (thick black outlines)
-- Clean white or light background
-- Consistent character design across all scenes
-- Simple color palette: green, blue, grey, white
-- Include finance related objects: piggy bank, coins, wallet, bank vault, charts, house, money stacks, laptop, or investment symbols when relevant
-- Scenes should be simple and easy to animate
+- Whiteboard sketching style — hand-drawn marker illustration on whiteboard background
+- Thick black marker outlines with slight hand-drawn wobble (not perfect vector)
+- Consistent round-faced character drawn in sketch style across all scenes
+- Clean whiteboard background (white) with occasional marker scribble/smudge effects
+- Color accents: green marker, blue marker, red marker on whiteboard
+- Hand-drawn finance objects: piggy bank, coins, wallet, bank vault, charts, house, money stacks, laptop, or investment symbols when relevant
+- Doodle-style icons, hand-drawn arrows, circled emphasis, marker underline effects
+- Scenes should look like they're being drawn in real-time on a whiteboard
 
 Output format:
 Scene 1
@@ -164,9 +163,9 @@ Rules:
 - Do NOT generate the image. Only generate an image prompt for an AI image generator
 - Thumbnail should be very simple and easy to understand
 - Use a cartoon character similar to animated finance explainer videos
-- Flat 2D vector illustration style
-- Bold black outlines
-- Minimal background
+- Whiteboard sketching style (hand-drawn marker illustration)
+- Thick black marker outlines with hand-drawn wobble effect
+- Whiteboard background (white) with minimal elements
 - Use finance related objects: money stacks, piggy bank, coins, arrows, charts, vault, house, or cash
 - Character should have exaggerated expressions: surprise, thinking, pointing, or excitement
 - Composition should be clean with only 1 or 2 main visual elements
