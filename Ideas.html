@@ -9,6 +9,7 @@
         body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #f4f6f9; color: #1a1a2e; padding: 3rem 1rem; }
         .container { max-width: 900px; margin: 0 auto; }
         h1 { font-size: 2.2rem; font-weight: 700; color: #0f3460; margin-bottom: 0.5rem; }
+        h1 small { font-size: 1rem; font-weight: 400; color: #888; }
         .subtitle { font-size: 1.05rem; color: #555; margin-bottom: 2.5rem; border-left: 4px solid #16c79a; padding-left: 1rem; }
         .section { margin-bottom: 2.5rem; }
         .section-title { font-size: 1.3rem; font-weight: 600; color: #0f3460; background: #e8ecf4; padding: 0.7rem 1.2rem; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
@@ -19,72 +20,23 @@
         .card-content { flex: 1; }
         .card-title { font-size: 1.05rem; font-weight: 600; color: #1a1a2e; }
         .card-desc { font-size: 0.88rem; color: #666; margin-top: 0.2rem; line-height: 1.4; }
-        .badge { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.2rem 0.6rem; border-radius: 4px; background: #eef2f7; color: #555; white-space: nowrap; }
+        .done-tag { font-size: 0.7rem; font-weight: 700; background: #16c79a; color: #fff; padding: 0.25rem 0.7rem; border-radius: 20px; white-space: nowrap; }
+        .card.done { opacity: 0.4; background: #f0f0f0; }
+        .card.done .card-title { text-decoration: line-through; color: #999; }
+        .card.done .num { color: #16c79a; }
         footer { margin-top: 3rem; text-align: center; font-size: 0.85rem; color: #999; }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>Video Ideas</h1>
+    <h1>Video Ideas <small>13 remaining</small></h1>
     <div class="subtitle">Curiosity-driven personal finance topics for animated explainer videos</div>
 
     <div class="section">
-        <div class="section-title">Money Psychology <span>5 ideas</span></div>
+        <div class="section-title">Personal Finance <span>4 ideas</span></div>
 
         <div class="card">
             <div class="num">01</div>
-            <div class="card-content">
-                <div class="card-title">Why Everything Changes After $100,000</div>
-                <div class="card-desc">The psychological shift that happens when your savings hit six figures — and why most people aren't ready for it.</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="num">02</div>
-            <div class="card-content">
-                <div class="card-title">The $5 Lie: Why Small Spending Habits Keep You Stuck</div>
-                <div class="card-desc">How your brain justifies tiny daily expenses that silently drain thousands every year, and why willpower has nothing to do with it.</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="num">03</div>
-            <div class="card-content">
-                <div class="card-title">Why Your Brain Treats Credit Card Money Differently</div>
-                <div class="card-desc">The neuroscience behind why spending feels painless with plastic — and the simple mental trick to fix it.</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="num">04</div>
-            <div class="card-content">
-                <div class="card-title">The Dopamine Trap of "On Sale"</div>
-                <div class="card-desc">Why your brain rewards you for spending money you didn't plan to, and how stores weaponize your own chemistry.</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="num">05</div>
-            <div class="card-content">
-                <div class="card-title">Why Rich People Think About Time Differently</div>
-                <div class="card-desc">The single mindset shift that separates wealthy thinking from broke thinking — and it has nothing to do with how much you earn.</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Personal Finance <span>5 ideas</span></div>
-
-        <div class="card">
-            <div class="num">06</div>
-            <div class="card-content">
-                <div class="card-title">The 50-30-20 Rule Is Keeping You Average</div>
-                <div class="card-desc">Why the most popular budgeting rule actually holds most people back, and what to use instead.</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="num">07</div>
             <div class="card-content">
                 <div class="card-title">Your Emergency Fund Is Too Small (Here's the Real Number)</div>
                 <div class="card-desc">The shocking calculation most finance gurus get wrong, and why 3 months of expenses can actually ruin you.</div>
@@ -92,7 +44,7 @@
         </div>
 
         <div class="card">
-            <div class="num">08</div>
+            <div class="num">02</div>
             <div class="card-content">
                 <div class="card-title">The Hidden Cost of Rent in Your 30s</div>
                 <div class="card-desc">What renting is actually costing you beyond the monthly check — and the math most people never do.</div>
@@ -100,7 +52,7 @@
         </div>
 
         <div class="card">
-            <div class="num">09</div>
+            <div class="num">03</div>
             <div class="card-content">
                 <div class="card-title">Why Your Salary Raise Is a Financial Trap</div>
                 <div class="card-desc">The counterintuitive reason a promotion can make you poorer, and how to protect yourself from lifestyle inflation.</div>
@@ -108,7 +60,7 @@
         </div>
 
         <div class="card">
-            <div class="num">10</div>
+            <div class="num">04</div>
             <div class="card-content">
                 <div class="card-title">Does a Side Hustle Actually Make You Money?</div>
                 <div class="card-desc">The honest math behind side income — when it builds wealth and when it just costs you more in hidden taxes, burnout, and time.</div>
@@ -117,18 +69,10 @@
     </div>
 
     <div class="section">
-        <div class="section-title">Financial Traps <span>5 ideas</span></div>
+        <div class="section-title">Financial Traps <span>4 ideas</span></div>
 
         <div class="card">
-            <div class="num">11</div>
-            <div class="card-content">
-                <div class="card-title">The Subscription Trap That Costs You $2,000 a Year</div>
-                <div class="card-desc">How small monthly charges add up to a second rent payment, and why companies design it so you never notice.</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="num">12</div>
+            <div class="num">05</div>
             <div class="card-content">
                 <div class="card-title">The Buy Now, Pay Later Trap Nobody Talks About</div>
                 <div class="card-desc">Why interest-free payments hurt your finances more than credit card debt, and the psychology behind "it's only $25 a month."</div>
@@ -136,7 +80,7 @@
         </div>
 
         <div class="card">
-            <div class="num">13</div>
+            <div class="num">06</div>
             <div class="card-content">
                 <div class="card-title">Why Having Multiple Bank Accounts Keeps You Broke</div>
                 <div class="card-desc">The surprising reason more accounts mean less control, and the simple system that actually works.</div>
@@ -144,7 +88,7 @@
         </div>
 
         <div class="card">
-            <div class="num">14</div>
+            <div class="num">07</div>
             <div class="card-content">
                 <div class="card-title">The Minimum Payment Illusion That Traps Millions</div>
                 <div class="card-desc">How credit card companies engineered the minimum payment to maximize their profit while making you feel in control.</div>
@@ -152,7 +96,7 @@
         </div>
 
         <div class="card">
-            <div class="num">15</div>
+            <div class="num">08</div>
             <div class="card-content">
                 <div class="card-title">The Social Media Spending Trap</div>
                 <div class="card-desc">How Instagram, TikTok, and YouTube are engineered to make you spend more — and the algorithm's role in your shrinking wallet.</div>
@@ -164,7 +108,7 @@
         <div class="section-title">Investing & Wealth Building <span>5 ideas</span></div>
 
         <div class="card">
-            <div class="num">16</div>
+            <div class="num">09</div>
             <div class="card-content">
                 <div class="card-title">The Financial Mistake Almost Everyone Makes Before 30</div>
                 <div class="card-desc">The one decision in your 20s that costs you over $500,000 by retirement — and no one warns you about it.</div>
@@ -172,7 +116,7 @@
         </div>
 
         <div class="card">
-            <div class="num">17</div>
+            <div class="num">10</div>
             <div class="card-content">
                 <div class="card-title">Why Most People Stay Broke After Getting a Raise</div>
                 <div class="card-desc">The behavioral cycle that keeps high earners living paycheck to paycheck, and the simple rule that breaks it.</div>
@@ -180,7 +124,7 @@
         </div>
 
         <div class="card">
-            <div class="num">18</div>
+            <div class="num">11</div>
             <div class="card-content">
                 <div class="card-title">What Happens When You Invest Just $1 a Day</div>
                 <div class="card-desc">The shocking power of micro-investing visualized — and why starting small beats waiting until you have "enough."</div>
@@ -188,7 +132,7 @@
         </div>
 
         <div class="card">
-            <div class="num">19</div>
+            <div class="num">12</div>
             <div class="card-content">
                 <div class="card-title">The Index Fund Trap That Cost Me $50,000</div>
                 <div class="card-desc">The hidden mistake passive investors make that nobody warns you about — and how to avoid it.</div>
@@ -196,11 +140,73 @@
         </div>
 
         <div class="card">
-            <div class="num">20</div>
+            <div class="num">13</div>
             <div class="card-content">
                 <div class="card-title">Why Cash Is Actually a Terrible Investment Right Now</div>
                 <div class="card-desc">The hidden cost of playing it safe — how inflation silently destroys your savings, and where to put your money instead.</div>
             </div>
+        </div>
+    </div>
+
+    <hr style="border:none;border-top:2px solid #e0e4ec;margin:2rem 0;">
+
+    <div class="section">
+        <div class="section-title" style="background:#e0e4ec;color:#888;">Completed <span style="background:#999;">7 videos</span></div>
+
+        <div class="card done">
+            <div class="num">01</div>
+            <div class="card-content">
+                <div class="card-title">Why Everything Changes After $100,000</div>
+            </div>
+            <span class="done-tag">Done</span>
+        </div>
+
+        <div class="card done">
+            <div class="num">02</div>
+            <div class="card-content">
+                <div class="card-title">The $5 Lie: Why Small Spending Habits Keep You Stuck</div>
+            </div>
+            <span class="done-tag">Done</span>
+        </div>
+
+        <div class="card done">
+            <div class="num">03</div>
+            <div class="card-content">
+                <div class="card-title">Why Your Brain Treats Credit Card Money Differently</div>
+            </div>
+            <span class="done-tag">Done</span>
+        </div>
+
+        <div class="card done">
+            <div class="num">04</div>
+            <div class="card-content">
+                <div class="card-title">The Dopamine Trap of "On Sale"</div>
+            </div>
+            <span class="done-tag">Done</span>
+        </div>
+
+        <div class="card done">
+            <div class="num">05</div>
+            <div class="card-content">
+                <div class="card-title">Why Rich People Think About Time Differently</div>
+            </div>
+            <span class="done-tag">Done</span>
+        </div>
+
+        <div class="card done">
+            <div class="num">06</div>
+            <div class="card-content">
+                <div class="card-title">The 50-30-20 Rule Is Keeping You Average</div>
+            </div>
+            <span class="done-tag">Done</span>
+        </div>
+
+        <div class="card done">
+            <div class="num">07</div>
+            <div class="card-content">
+                <div class="card-title">The Subscription Trap That Costs You $2,000 a Year</div>
+            </div>
+            <span class="done-tag">Done</span>
         </div>
     </div>
 

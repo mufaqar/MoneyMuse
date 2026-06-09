@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 50-30-20 Rule Is Keeping You Average | MoneyMuse</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #f4f6f9; color: #1a1a2e; padding: 2rem 1rem; }
+.container { max-width: 1000px; margin: 0 auto; }
+h1 { font-size: 2rem; font-weight: 700; color: #0f3460; margin-bottom: 0.3rem; }
+.subtitle { color: #555; font-size: 1rem; margin-bottom: 2rem; border-left: 4px solid #16c79a; padding-left: 1rem; }
+.badge { font-size: 0.75rem; font-weight: 600; background: #16c79a; color: #fff; padding: 0.2rem 0.7rem; border-radius: 20px; display: inline-block; }
+.badge.gold { background: #ff8c42; }
+.badge.blue { background: #4a7cff; }
+.badge.image { background: #9b59b6; color: #fff; }
+.badge.video { background: #e74c3c; color: #fff; }
+.section-header { font-size: 1.2rem; font-weight: 600; color: #0f3460; background: #e8ecf4; padding: 0.7rem 1.2rem; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.scene { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #2c3e50; }
+.scene-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+.scene-num { font-weight: 700; color: #2c3e50; font-size: 0.9rem; }
+.scene-desc { font-style: italic; color: #555; font-size: 0.9rem; }
+.voiceover { background: #f0f4ff; border-radius: 6px; padding: 0.8rem 1rem; margin-top: 0.7rem; font-size: 0.95rem; line-height: 1.6; color: #1a1a2e; border-left: 3px solid #4a7cff; }
+.voiceover-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #4a7cff; margin-bottom: 0.3rem; }
+.prompt-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; margin-bottom: 0.2rem; margin-top: 0.6rem; padding: 0.15rem 0.6rem; border-radius: 4px; display: inline-block; }
+.prompt-label.image { background: #9b59b6; }
+.prompt-label.video { background: #e74c3c; }
+.prompt-box { background: #f9fafc; border-radius: 6px; padding: 0.8rem 1rem; font-size: 0.88rem; line-height: 1.5; color: #444; font-family: 'Courier New', monospace; border-left: 3px solid #2c3e50; white-space: pre-wrap; margin-bottom: 0.5rem; }
+.prompt-box.video-prompt { border-left-color: #e74c3c; background: #fef5f5; }
+.img-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem; }
+.img-item { background: #f9fafc; border-radius: 6px; padding: 0.7rem; border-left: 3px solid #9b59b6; }
+.img-item .label { font-size: 0.7rem; font-weight: 600; color: #9b59b6; margin-bottom: 0.2rem; }
+.img-item .text { font-size: 0.82rem; color: #444; font-family: 'Courier New', monospace; line-height: 1.4; white-space: pre-wrap; }
+.vid-item { background: #fef5f5; border-radius: 6px; padding: 0.7rem; border-left: 3px solid #e74c3c; }
+.vid-item .label { font-size: 0.7rem; font-weight: 600; color: #e74c3c; margin-bottom: 0.2rem; }
+.vid-item .text { font-size: 0.82rem; color: #444; font-family: 'Courier New', monospace; line-height: 1.4; }
+.thumbnail-box { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #ff8c42; margin-bottom: 1rem; }
+.thumbnail-box .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+.thumbnail-box .label.gold { color: #ff8c42; }
+.thumbnail-box .label.blue { color: #4a7cff; }
+.seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.seo-card { background: #fff; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.seo-card h3 { font-size: 0.9rem; color: #0f3460; margin-bottom: 0.5rem; }
+.seo-card ul { list-style: none; }
+.seo-card li { font-size: 0.88rem; color: #444; padding: 0.25rem 0; border-bottom: 1px solid #f0f0f0; }
+.seo-card li:last-child { border-bottom: none; }
+.seo-card.tags li { display: inline-block; background: #eef2f7; padding: 0.2rem 0.6rem; border-radius: 4px; margin: 0.2rem; font-size: 0.8rem; border: none; }
+.seo-desc { font-size: 0.85rem; line-height: 1.6; color: #444; margin-bottom: 0.5rem; }
+.vonote { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.vonote ul { list-style: none; font-size: 0.92rem; line-height: 1.8; color: #444; }
+.meta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.meta-tag { background: #e8ecf4; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; }
+.meta-tag.style { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+footer { margin-top: 3rem; text-align: center; font-size: 0.85rem; color: #999; padding: 1rem 0; }
+@media (max-width: 700px) { .seo-grid { grid-template-columns: 1fr; } .img-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>The 50-30-20 Rule Is Keeping You Average</h1>
+<div class="subtitle">Whiteboard sketching style — Hand-drawn marker animation on whiteboard</div>
+
+<div class="meta-row">
+    <span class="meta-tag">Category: Personal Finance</span>
+    <span class="meta-tag">Est. Length: ~3-4 min</span>
+    <span class="meta-tag style">Style: Whiteboard Sketching</span>
+    <span class="meta-tag">Scenes: 8</span>
+    <span class="meta-tag">Images: 24</span>
+    <span class="meta-tag">Video Prompts: 24</span>
+</div>
+
+<!-- SCENE 01 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 01</span>
+        <span class="scene-desc">Character surrounded by personal finance advice, everyone recommending the 50-30-20 rule</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        If you've ever searched for how to budget, you've seen it. The 50-30-20 rule. 50% of your income on needs. 30% on wants. 20% on savings. It's everywhere — every blog, every YouTube video, every finance influencer swears by it. It sounds simple. It sounds smart. But here's what nobody tells you: this rule is designed to keep you average. And if you're following it, you might be sabotaging your wealth without even knowing.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Overwhelmed by budget advice</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a round-faced character drawn in sketch style sitting at a desk surrounded by floating books and speech bubbles all with "50-30-20" scribbled in various marker colors (green blue red), the character has a confused expression with swirl doodle lines above the head drawn in black marker, hands covering ears with "too much" scribbled in red marker, thick black marker outlines with hand-drawn wobble, marker color accents black green blue red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — The rule visualized as a pie chart</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn pie chart divided into three sections with marker scribble labels, 50% section colored in blue marker labeled "Needs" with a house and food doodle, 30% section colored in green marker labeled "Wants" with a shopping bag and coffee cup doodle, 20% section colored in red marker labeled "Savings" with a piggy bank doodle, a round-faced character drawn in sketch style pointing at the chart with a nod and a small smile, thick black marker outlines with hand-drawn wobble, marker color accents black blue green red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — "Average" stamp on the rule</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn "50-30-20" text in blue marker with a red marker stamp across it reading "AVERAGE" in bold scribble letters with hand-drawn stamp texture dots around it, a round-faced character drawn in sketch style beside it with one eyebrow raised and a skeptical expression, hand-drawn question mark above the head in green marker, a faded grey crowd of identical character silhouettes in the background labeled "Everyone" in grey marker, thick black marker outlines with hand-drawn wobble, marker color accents black blue red green grey</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Overwhelmed animation</div>
+            <div class="text">Floating books and speech bubbles circle the character with "50-30-20" appearing one by one as marker scribble, swirl doodles above head spin faster with each new bubble, character covers ears with subtle sketch animation, 5-second overwhelming buildup with hand-drawn wobble, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Pie chart animation</div>
+            <div class="text">Pie chart draws itself in real-time marker stroke — blue section first, then green, then red, each section filling with crosshatch marker fill, labels appear with scribble text effect, character points and nods with subtle sketch motion, 5-second sequential reveal with hand-drawn feel, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Average stamp animation</div>
+            <div class="text">"50-30-20" text draws in blue marker, then the red "AVERAGE" stamp slams down with a bounce and stamp texture dots appearing with scribble effect, character raises eyebrow with skeptical sketch animation, question mark fades in green with wobble, 4-second impact with bounce easing, one-time with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 02 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 02</span>
+        <span class="scene-desc">Explaining the origin of the 50-30-20 rule — designed for a different era</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        The 50-30-20 rule was popularized by Elizabeth Warren in her book "All Your Worth." The idea was to create a simple framework that anyone could follow. And for its time, it made sense. The problem is, we're still using a rule that was designed for a completely different economy. Housing costs have outpaced wages by 400%. Student loan debt has tripled. Healthcare is more expensive. The 50% needs category doesn't fit anymore.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Then vs now comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, split screen with a hand-drawn vertical divider, left side labeled "Then" in blue marker showing a small house with a tiny price tag "$500/mo" in green marker and a smiling character with a full wallet, right side labeled "Now" in red marker showing the same house with a huge "$2,000/mo" tag circled in red and the same character looking stressed with an empty wallet and sweat drops, a hand-drawn arrow labeled "400%" between the two prices, thick black marker outlines with hand-drawn wobble, marker color accents black blue green red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Outdated rule book</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn book with "All Your Worth" on the cover in blue marker and "2005" scribbled on the spine, the book is dusty with cobweb doodles drawn in grey marker, next to it a modern smartphone showing 2025 date with a breaking news icon, a round-faced character drawn in sketch style looking back and forth between the old book and the phone with a skeptical expression, thick black marker outlines with hand-drawn wobble, marker color accents black blue green grey</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Pie chart squeezed</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn pie chart where the "Needs" section in blue marker is bulging and overflowing beyond its 50% boundary with scribble pressure lines and "Rent" "Loans" "Insurance" labels squeezing out, the "Wants" section in green marker is being crushed and the "Savings" section in red marker has shrunk to a tiny sliver, a round-faced character drawn in sketch style trying to hold the pie together with stretched arms and a panicked expression, thick black marker outlines with hand-drawn wobble, marker color accents black blue green red</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Then vs now animation</div>
+            <div class="text">Left side stays calm with green tones and a happy character, right side slowly shifts from calm to stressed as the price tag grows from $500 to $2,000 with red marker scribble effect, the 400% arrow draws itself with a red marker stroke, wallet on right shrinks with eraser effect, 6-sided contrast animation with hand-drawn wobble, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Outdated book animation</div>
+            <div class="text">Dust particles and cobwebs slowly fade in on the old book with grey marker scribble, phone screen pulses with a news alert icon, character's head turns back and forth with sketch animation and skeptical eyebrow raise, 5-second comparison with gentle motion, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Pie compression animation</div>
+            <div class="text">"Needs" section expands slowly pushing against the border with pressure lines appearing as red scribble, "Wants" and "Savings" sections compress with marker squish effect, character's arms stretch with effort lines as they try to hold the pie together, 5-second squeeze animation with tension feel, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 03 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 03</span>
+        <span class="scene-desc">The wants category — how 30% becomes a target instead of a limit</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        But the real trap is psychological. When you budget 30% for wants, your brain treats that number as a target, not a limit. You feel entitled to spend 30% of your income on things you don't need. A $60,000 salary means you've budgeted $18,000 a year for wants. That's $1,500 a month. For "fun." And when you don't spend it all, you feel like you're depriving yourself. The rule actually encourages overconsumption.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Target vs limit visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn dartboard with "30%" in the center in green marker, the round-faced character drawn in sketch style throwing darts at it with a determined expression trying to hit the target, below the dartboard two speech bubbles, left says "Target! Spend it!" in green marker with a happy face, right says "Limit? Save it." in blue marker with a checkmark but is grey and faded, thick black marker outlines with hand-drawn wobble, marker color accents black green blue grey</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — $1,500 a month on wants</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a round-faced character drawn in sketch style sitting on a giant pile of shopping bags labeled "$1,500/mo" in green marker with a confused expression, each bag has a want doodle — coffee cup, movie ticket, clothing tag, restaurant plate, gadgets, the character has a questioning thought bubble saying "Is this normal?" in blue marker, a small angel and devil on each shoulder, the angel pointing at a piggy bank and the devil pointing at more bags, thick black marker outlines with hand-drawn wobble, marker color accents black green blue red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Entitlement balloon</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn balloon labeled "I deserve this" in red marker floating above a character's head with a smug expression, the balloon is inflated to 30% size with crosshatch marker fill, the character is holding a shopping bag while a small piggy bank in the corner looks sad with a tear doodle, arrow pointing from the balloon to the shopping bag labeled "30% wants budget" in green marker with underline, thick black marker outlines with hand-drawn wobble, marker color accents black red green grey</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Dartboard animation</div>
+            <div class="text">Character throws darts at the 30% target with sketch motion, each dart hits with a marker thud effect, the green "Target!" speech bubble glows while the blue "Limit?" one fades to grey, character's expression shows satisfaction when hitting the target, 5-second aiming motion with hand-drawn wobble, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Shopping pile animation</div>
+            <div class="text">Shopping bags stack up one by one with scribble motion, each bag's item doodle appears with marker stroke, character's expression shifts from happy to confused with sketch animation, angel and devil shoulders gesture with subtle motion, 6-second stacking animation with hand-drawn jitter, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Entitlement balloon animation</div>
+            <div class="text">Balloon inflates slowly with marker fill expanding, character's smile widens as bag appears in hand, piggy bank in corner trembles with sad tear appearing in blue marker, arrow draws itself from balloon to bag with green stroke, 4-slow balloon inflation with hand-drawn jitter, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 04 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 04</span>
+        <span class="scene-desc">The 20% savings ceiling — why it's designed to keep you comfortable, not wealthy</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Then there's the 20% savings target. It sounds responsible. But ask yourself — who decided that 20% is the right number? Why not 30%? Or 40%? The 50-30-20 rule sets a ceiling on your ambition. Most people treat 20% as the goal. They save exactly 20%, feel good about it, and stop. Meanwhile, financially independent people often save 40%, 50%, even 60% of their income. The rule keeps you comfortable. And comfort is the enemy of wealth.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Ceiling glass visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn glass ceiling labeled "20% SAVINGS" in red marker with a crack visible, a round-faced character drawn in sketch style bumping their head against the ceiling with a confused expression and a hand-drawn bump, above the ceiling in green marker the numbers "30% 40% 50% 60%" are drawn with upward arrows and sparkle doodles, a ladder labeled "Ambition" in blue marker is leaning against the ceiling but not being used, thick black marker outlines with hand-drawn wobble, marker color accents black red green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Savings rate comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, two characters drawn in sketch style side by side, left character labeled "50-30-20 Follower" with a small piggy bank showing "20%" in green marker and a calm smile, right character labeled "Financially Independent" with a large piggy bank showing "50%" in bold green marker and a confident smile, between them a hand-drawn scale clearly showing the right side is heavier with money stacks, a "VS" scribble in red marker in the middle, thick black marker outlines with hand-drawn wobble, marker color accents black green red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Comfort zone trap</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a round-faced character drawn in sketch style sitting inside a hand-drawn circle labeled "Comfort Zone — 20%" in blue marker with a relaxed smile and a "feels good" bubble, outside the circle in red marker is a rugged path labeled "Wealth Zone — 40%+" with rocky doodles and a steep incline, a tiny version of the character is standing at the start of the path looking back with hesitation, a signpost at the edge reads "Average ends here" in green marker, thick black marker outlines with hand-drawn wobble, marker color accents black blue red green</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Glass ceiling animation</div>
+            <div class="text">Character bumps head against the 20% ceiling with a subtle bounce and a bump doodle appearing, above the ceiling the higher percentages glow with green marker pulse and upward arrows drawing with stroke effect, ladder sits unused with a subtle wobble, 4-second limitation feel with hand-drawn jitter, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Comparison animation</div>
+            <div class="text">Left character's piggy bank fills to 20% with slow marker fill, right character's piggy bank fills rapidly to 50% with green glow and scribble fill, scale tilts showing the weight difference, right character's smile widens with confident nod sketch animation, 5-second contrast animation with hand-drawn wobble, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Comfort zone animation</div>
+            <div class="text">Character inside the comfort zone sits relaxed with gentle breathing sketch animation, then the camera slowly pans to the rugged path outside with rocky terrain markers, small version of character at the path entrance looks back with hesitation, "Average ends here" sign pulses green, 6-second temptation animation with smooth push, one-time with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 05 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 05</span>
+        <span class="scene-desc">One-size-fits-all — why the same rule doesn't work for different incomes</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Here's another problem. The 50-30-20 rule applies the same percentages whether you earn $30,000 or $300,000. That makes no sense. If you earn $30,000, 50% for needs is barely survivable. But if you earn $300,000, you don't need to spend 30% on wants. You could save 50% of your income and still live well. The rule doesn't account for your actual financial reality. It's a one-size-fits-all solution that actually fits no one.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — One-size-fits-all fails</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn shirt labeled "50-30-20" being pulled over two different characters drawn in sketch style, a small character on the left labeled "$30k" is drowning in the oversized shirt with only their head poking out and a stressed expression, a large character on the right labeled "$300k" is straining against a too-small shirt that's ripping at the seams with a frustrated expression, a tailor's measuring tape doodle with "FAIL" written in red marker, thick black marker outlines with hand-drawn wobble, marker color accents black green red blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Different realities visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, three columns showing three different income levels, left column "$30k" with a small character holding a tiny pie chart where needs take up 80% with red marker stress lines, middle column "$80k" with a medium character holding a balanced pie chart, right column "$300k" with a large character holding a pie chart where savings is 50% in green marker, all three have "50-30-20" labels crossed out in red marker with X marks, thick black marker outlines with hand-drawn wobble, marker color accents black green red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Cookie cutter analogy</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn cookie cutter in the shape of "50-30-20" stamping down on three differently shaped dough pieces labeled "$30k" "$80k" "$300k", the cutter is mangling each piece with squished edges and broken bits flying off, a round-faced character drawn in sketch style holding the cutter with a clueless smile and "It works for everyone!" written above in blue marker, the mangled dough pieces have crying faces drawn on them, thick black marker outlines with hand-drawn wobble, marker color accents black green blue red</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Shirt animation</div>
+            <div class="text">Shirt struggles to fit either character — left character is swallowed with fabric pooling over their head, right character strains against the fabric with ripping seam lines appearing in red marker, both characters have distressed expressions with sketch animation, 5-second uncomfortable fit with hand-drawn wobble, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Column comparison animation</div>
+            <div class="text">Three pie charts appear one by one with marker stroke reveal, the left chart's needs section bulges red with stress lines, the right chart's savings section grows green with sparkle effect, red X marks draw across all three "50-30-20" labels with scribble motion, 6-second sequential reveal with hand-drawn effect, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Cookie cutter animation</div>
+            <div class="text">Cookie cutter slams down with a stamp effect and scribble impact lines, each dough piece gets mangled differently with bits flying off, character holds the cutter with clueless smile and blinking sketch animation, dough pieces have crying faces appearing with marker stroke, 4-second impact with bounce easing, one-time with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 06 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 06</span>
+        <span class="scene-desc">The real math — what 20% savings actually means for retirement</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Let's do the real math. If you save 20% of your income starting at age 25, earning 7% returns, you'll have about 10 times your annual income saved by 65. That sounds decent. But 10 times your income is barely enough for a basic retirement. Now compare that to saving 30% — you'd have 25 times your income. At 40% savings, you could retire in 20 years. The difference between 20% and 30% isn't 10% — it's the difference between struggling and freedom.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Retirement math comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, two hand-drawn characters at age 65, left character labeled "20% Saver" in red marker standing next to a small coin stack labeled "10x Income" with a worried expression and a "That's it?" thought bubble, right character labeled "30% Saver" in green marker standing next to a large coin stack labeled "25x Income" with a relaxed smile and a "Freedom" thought bubble with sparkle doodles, a hand-drawn arrow between them labeled "Just 10% more" in blue marker with underline, thick black marker outlines with hand-drawn wobble, marker color accents black red green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Retirement timeline</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a horizontal hand-drawn timeline from age 25 to 65 with three path lines, path 1 labeled "20% Savings" in red marker ending at a small house labeled "65 — Basic" with a neutral face, path 2 labeled "30% Savings" in green marker ending at a medium house labeled "65 — Comfortable" with a smile, path 3 labeled "40% Savings" in bold green marker ending at age 45 with a large house labeled "45 — FREEDOM" with sparkle doodles and a celebration star burst, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Margin of freedom visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn scale with "20% Savings" on the left side barely lifting a small "Survival" label in grey marker, "30% Savings" on the right side lifting a large "Freedom" label in green marker with wings drawn on it, the difference between the two is highlighted with a hand-drawn magnifying glass labeled "10% gap = everything" in red marker with circled emphasis, a round-faced character drawn in sketch style looking through the magnifying glass with wide eyes, thick black marker outlines with hand-drawn wobble, marker color accents black grey green red</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Retirement comparison animation</div>
+            <div class="text">Left coin stack grows slowly to a small 10x height with red marker fill, right coin stack grows rapidly to 25x with green marker fill and sparkle effect, character on left shows worry with sweat drops appearing, character on right relaxes with a smile, the "Just 10% more" arrow draws itself between them with blue stroke, 6-second growth animation with hand-drawn wobble, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Timeline animation</div>
+            <div class="text">Three paths draw themselves sequentially from left to right with marker stroke, red path ends at a small house at 65, green path ends at a medium house at 65, bold green path shoots faster and ends early at 45 with a celebration burst effect and sparkle doodles appearing with scribble motion, 6-speed differential with marker reveal, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Magnifying glass animation</div>
+            <div class="text">Scale tilts slowly showing 20% side barely lifting and 30% side soaring up, magnifying glass moves over the gap with subtle hand-drawn motion, "10% gap = everything" appears with red marker stroke and circled emphasis, character's eyes widen with realization sketch animation, 5-second reveal with hand-drawn wobble, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 07 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 07</span>
+        <span class="scene-desc">The better approach — pay yourself first and reverse budgeting</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        So what should you do instead? Stop starting with expenses. Start with savings. Decide what percentage of your income you want to save — 25%, 35%, 50% — and automate that transfer the moment you get paid. Then you live on whatever is left. This is called "paying yourself first." It flips the psychology. Instead of saving what's left after spending, you spend what's left after saving. The rule becomes yours, not someone else's.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Pay yourself first flip</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, two side-by-side flowcharts drawn in marker, left flowchart labeled "Old: 50-30-20" in red marker shows arrows going Income → Needs → Wants → Savings (small), right flowchart labeled "New: Pay Yourself First" in green marker shows arrows going Income → Savings (large with a piggy bank) → Everything Else, a round-faced character drawn in sketch style crossing out the left flowchart with a red X and pointing at the right one with a confident smile and a thumbs up, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Automated transfer visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn smartphone showing a bank app with "AUTOMATIC TRANSFER" in bold green marker, a large arrow labeled "30%" shooting from "Income" into a piggy bank doodle that's smiling, the remaining arrow labeled "70%" goes to "Living Expenses" with a small house and food doodle, a clock icon showing "Payday" with a sparkle, the round-faced character drawn in sketch style watching the transfer with a relaxed smile and arms behind head, thick black marker outlines with hand-drawn wobble, marker color accents black green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Custom rule builder</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn control panel with slider doodles and dials, a character drawn in sketch style adjusting a large slider labeled "Savings %" with a green marker glow and the number "35%" displayed in bold, below the slider are three customizable boxes — "Essentials" "Lifestyle" "Goals" — each with empty fill lines and marker scribble "YOU DECIDE" written in blue marker across the panel, the character has a proud expression with a lightbulb glowing above the head in yellow marker, thick black marker outlines with hand-drawn wobble, marker color accents black green blue yellow</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Flowchart flip animation</div>
+            <div class="text">Left flowchart draws with red marker, then a red X scribbles across it with emphasis, right flowchart draws with green marker in reverse order starting from savings, character crosses out left and points to right with confident thumb-up animation, 5-second transition with hand-drawn wobble, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Auto transfer animation</div>
+            <div class="text">Large arrow labeled "30%" shoots from Income into piggy bank with a green glow pulse, piggy bank smiles with happy sketch animation, remaining "70%" flows calmly to living expenses, character watches with relaxed nod and arms-behind-head pose, 5-action with smooth flow feel, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Custom slider animation</div>
+            <div class="text">Slider dial moves up to 35% with a satisfying click animation and green marker glow, control panel boxes adjust their fill levels responsively, lightbulb fades in above character's head with yellow scribble pulse, 5-second empowering customization motion with hand-drawn jitter, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 08 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 08</span>
+        <span class="scene-desc">Closing — upgrade your system, not your sacrifice</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        The 50-30-20 rule isn't evil. It's a starting point. But it was designed for a world where average was enough. If you want financial freedom, you need a system that grows with you. One that prioritizes your future first. The rule you follow should challenge you, not comfort you. So here's your challenge — look at your budget this month. Are you following a rule designed for someone else's average life? Or are you building a system for your extraordinary one?
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Old rule vs new rule closing</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, on the left a faded grey "50-30-20" with a hand-drawn tombstone labeled "AVERAGE" in grey marker with a wilting flower doodle, on the right a bright "MY RULE" written in green marker with a rising sun doodle and sparkle scribbles, a round-faced character drawn in sketch style walking confidently from left to right with a backpack labeled "Future First" in blue marker, leaving the old rule behind with one backward glance and a smile, thick black marker outlines with hand-drawn wobble, marker color accents black grey green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — System growth ladder</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn ladder with rungs showing progressive savings rates — bottom rung "20%" in grey marker, middle rungs "25% 30% 35%" in blue marker turning greener, top rung "40%+" in bold green marker with a glowing star, a round-faced character drawn in sketch style climbing the ladder with a determined expression, each rung has a small icon — piggy bank, house, chart up, freedom symbol, the character is past the 20% rung and reaching for 30%, thick black marker outlines with hand-drawn wobble, marker color accents black grey blue green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Challenge mirror</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn mirror with a reflection showing the round-faced character drawn in sketch style, the character in the reflection has a confident smile and is holding a green marker with a speech bubble saying "What's YOUR rule?" in bold green marker with underline, the real character standing in front of the mirror is looking thoughtful with a hand on chin and a small lightbulb above the head in yellow marker, at the bottom of the mirror "50-30-20" is fading into the background in grey marker, thick black marker outlines with hand-drawn wobble, marker color accents black green yellow grey</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Walking away animation</div>
+            <div class="text">Character walks from left to right with confident step animation and sketch motion lines, old 50-30-20 on the left fades to grey with tombstone appearing slowly, new "MY RULE" on the right glows green with rising sun drawing upward with marker stroke effect, character's smile widens with one last glance back, 6-moving forward animation with hand-drawn wobble, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Ladder climb animation</div>
+            <div class="text">Character climbs the ladder with steady hand-drawn step animation, each rung lights up green as they pass it, 20% rung stays grey behind them, 30% rung glows green as they reach it, star at the top pulses with sparkle scribble effect, 6-ascending motion with determination feel, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Mirror challenge animation</div>
+            <div class="text">Mirror reflection character speaks with speech bubble appearing in green marker stroke, real character's hand moves to chin with thoughtful sketch animation, lightbulb fades in with yellow glow, 50-30-20 at the bottom slowly fades with eraser effect, 5-challenge moment with introspective feel, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- THUMBNAIL -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">Thumbnail <span class="badge gold">Video 07</span></div>
+    <div class="thumbnail-box">
+        <div class="label gold">Thumbnail Idea</div>
+        <p style="margin:0.3rem 0 0.8rem; color:#444; font-size:0.95rem;">Whiteboard-style close-up of a large pie chart labeled "50-30-20" with a red "AVERAGE" stamp across it, the round-faced character in sketch style pushing the pie chart aside and holding up a custom green slider showing 40%+ savings with a confident smirk. Clean whiteboard background with marker smudge effects.</p>
+        <div class="label blue">Thumbnail Text</div>
+        <p style="margin:0.3rem 0 0.8rem; font-size:1.3rem; font-weight:700; color:#0f3460;">"STAYING AVERAGE"</p>
+        <div class="label gold">AI Image Prompt</div>
+        <div class="prompt-box">whiteboard sketching style thumbnail, hand-drawn marker illustration on whiteboard background, a round-faced character drawn in sketch style standing centered with a confident smirk and one hand pushing aside a large pie chart labeled "50-30-20" in blue marker that has a red "AVERAGE" stamp across it with stamp texture dots, the other hand holding up a glowing green marker slider showing "40%+" with sparkle scribbles, the character's expression is knowingly confident, the old pie chart is slightly tilted and faded, marker smudge effects on the whiteboard, clean composition with space for bold text overlay at the top, thick black marker outlines with hand-drawn wobble, color palette black marker whiteboard green red blue accents</div>
+    </div>
+</div>
+
+<!-- SEO -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">SEO <span class="badge gold">Video 07</span></div>
+    <div class="seo-grid">
+        <div class="seo-card">
+            <h3>Title Options</h3>
+            <ul>
+                <li>The 50-30-20 Rule Is Keeping You Average (Here's What to Use Instead)</li>
+                <li>Why the Most Popular Budget Rule Is a Financial Trap</li>
+                <li>Stop Using the 50-30-20 Rule — Try This Instead</li>
+                <li>The Budgeting Rule That's Secretly Keeping You Broke</li>
+                <li>How the 50-30-20 Rule Limits Your Wealth (And What Actually Works)</li>
+            </ul>
+        </div>
+        <div class="seo-card">
+            <h3>Description</h3>
+            <div class="seo-desc">The 50-30-20 rule is the most popular budgeting method in the world. But what if it's actually keeping you average? In this video, we break down why this rule was designed for a different economy, how the 30% wants category encourages overconsumption, and why the 20% savings target puts a ceiling on your financial potential.</div>
+            <div class="seo-desc">You'll learn the "pay yourself first" method that financially independent people use, why the difference between saving 20% and 30% is the difference between struggling and freedom, and how to build a custom budget that grows with you — not one designed for someone else's average life.</div>
+        </div>
+        <div class="seo-card tags">
+            <h3>Tags (30)</h3>
+            <ul>
+                <li>50-30-20 rule</li><li>budgeting rules</li><li>why 50-30-20 doesn't work</li><li>personal finance</li><li>budgeting for beginners</li><li>money management</li><li>pay yourself first</li><li>savings rate</li><li>financial independence</li><li>retirement planning</li><li>budgeting tips</li><li>money mindset</li><li>wealth building</li><li>financial freedom</li><li>how to budget</li><li>average trap</li><li>financial education</li><li>saving money tips</li><li>Elizabeth Warren budget</li><li>50 30 20 rule explained</li><li>budgeting mistakes</li><li>financial literacy</li><li>wealth creation</li><li>high savings rate</li><li>FIRE movement</li><li>early retirement</li><li>money psychology</li><li>behavioral finance</li><li>financial goals</li><li>smart budgeting</li>
+            </ul>
+        </div>
+        <div class="seo-card">
+            <h3>Keywords (15)</h3>
+            <ul>
+                <li>50-30-20 rule explained</li><li>why 50-30-20 is bad</li><li>better than 50-30-20 rule</li><li>pay yourself first method</li><li>budgeting for wealth</li><li>savings rate guide</li><li>financial independence budget</li><li>retirement savings tips</li><li>average budget trap</li><li>how much to save each month</li><li>personal finance 2025</li><li>wealth building habits</li><li>smart budgeting strategies</li><li>money management tips</li><li>FIRE budgeting</li>
+            </ul>
+        </div>
+        <div class="seo-card" style="grid-column: span 2;">
+            <h3>Hashtags (7)</h3>
+            <ul>
+                <li>#BudgetingTips</li><li>#PersonalFinance</li><li>#MoneyMindset</li><li>#FinancialFreedom</li><li>#WealthBuilding</li><li>#SavingsRate</li><li>#FinancialEducation</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- VOICEOVER NOTES -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">AI Voiceover Notes <span class="badge gold">Video 07</span></div>
+    <div class="vonote">
+        <ul>
+            <li><strong>Tone:</strong> Conversational, skeptical of the conventional wisdom, educational but with an edge — shifts from questioning to empowering at the solution</li>
+            <li><strong>Pace:</strong> Moderate, speed up slightly on the math section, slow down on the comparison between 20% and 30% savings, emphatic on the closing challenge</li>
+            <li><strong>Emphasis:</strong> "target not a limit", "ceiling on ambition", "20% vs 30%", "pay yourself first", "average", "your extraordinary one"</li>
+            <li><strong>Duration:</strong> ~980 words at 150 wpm = ~6.5 minutes (with pauses, est. 3-4 min final video)</li>
+        </ul>
+    </div>
+</div>
+
+<div style="margin-top:1.5rem; padding:1rem; background:#fff3cd; border-radius:8px; border-left:4px solid #ffc107;">
+    <strong style="color:#856404;">Generated using <code>upcoming_video_instructions.md</code></strong>
+    <p style="color:#856404; font-size:0.85rem; margin-top:0.3rem;">8 scenes · 1 voiceover + 3 image prompts + 3 AI video prompts per scene · Total: 24 images · 24 video prompts · Whiteboard sketching style</p>
+</div>
+
+<footer>MoneyMuse &mdash; Finance explained simply through animation &bull; Generated via upcoming_video_instructions.md</footer>
+
+</div>
+</body>
+</html>

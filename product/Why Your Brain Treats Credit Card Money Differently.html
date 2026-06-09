@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Your Brain Treats Credit Card Money Differently | MoneyMuse</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background: #f4f6f9; color: #1a1a2e; padding: 2rem 1rem; }
+.container { max-width: 1000px; margin: 0 auto; }
+h1 { font-size: 2rem; font-weight: 700; color: #0f3460; margin-bottom: 0.3rem; }
+.subtitle { color: #555; font-size: 1rem; margin-bottom: 2rem; border-left: 4px solid #16c79a; padding-left: 1rem; }
+.badge { font-size: 0.75rem; font-weight: 600; background: #16c79a; color: #fff; padding: 0.2rem 0.7rem; border-radius: 20px; display: inline-block; }
+.badge.gold { background: #ff8c42; }
+.badge.blue { background: #4a7cff; }
+.badge.image { background: #9b59b6; color: #fff; }
+.badge.video { background: #e74c3c; color: #fff; }
+.section-header { font-size: 1.2rem; font-weight: 600; color: #0f3460; background: #e8ecf4; padding: 0.7rem 1.2rem; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.scene { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #2c3e50; }
+.scene-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+.scene-num { font-weight: 700; color: #2c3e50; font-size: 0.9rem; }
+.scene-desc { font-style: italic; color: #555; font-size: 0.9rem; }
+.voiceover { background: #f0f4ff; border-radius: 6px; padding: 0.8rem 1rem; margin-top: 0.7rem; font-size: 0.95rem; line-height: 1.6; color: #1a1a2e; border-left: 3px solid #4a7cff; }
+.voiceover-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #4a7cff; margin-bottom: 0.3rem; }
+.prompt-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; margin-bottom: 0.2rem; margin-top: 0.6rem; padding: 0.15rem 0.6rem; border-radius: 4px; display: inline-block; }
+.prompt-label.image { background: #9b59b6; }
+.prompt-label.video { background: #e74c3c; }
+.prompt-box { background: #f9fafc; border-radius: 6px; padding: 0.8rem 1rem; font-size: 0.88rem; line-height: 1.5; color: #444; font-family: 'Courier New', monospace; border-left: 3px solid #2c3e50; white-space: pre-wrap; margin-bottom: 0.5rem; }
+.prompt-box.video-prompt { border-left-color: #e74c3c; background: #fef5f5; }
+.img-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.5rem; }
+.img-item { background: #f9fafc; border-radius: 6px; padding: 0.7rem; border-left: 3px solid #9b59b6; }
+.img-item .label { font-size: 0.7rem; font-weight: 600; color: #9b59b6; margin-bottom: 0.2rem; }
+.img-item .text { font-size: 0.82rem; color: #444; font-family: 'Courier New', monospace; line-height: 1.4; white-space: pre-wrap; }
+.vid-item { background: #fef5f5; border-radius: 6px; padding: 0.7rem; border-left: 3px solid #e74c3c; }
+.vid-item .label { font-size: 0.7rem; font-weight: 600; color: #e74c3c; margin-bottom: 0.2rem; }
+.vid-item .text { font-size: 0.82rem; color: #444; font-family: 'Courier New', monospace; line-height: 1.4; }
+.thumbnail-box { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid #ff8c42; margin-bottom: 1rem; }
+.thumbnail-box .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+.thumbnail-box .label.gold { color: #ff8c42; }
+.thumbnail-box .label.blue { color: #4a7cff; }
+.seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.seo-card { background: #fff; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.seo-card h3 { font-size: 0.9rem; color: #0f3460; margin-bottom: 0.5rem; }
+.seo-card ul { list-style: none; }
+.seo-card li { font-size: 0.88rem; color: #444; padding: 0.25rem 0; border-bottom: 1px solid #f0f0f0; }
+.seo-card li:last-child { border-bottom: none; }
+.seo-card.tags li { display: inline-block; background: #eef2f7; padding: 0.2rem 0.6rem; border-radius: 4px; margin: 0.2rem; font-size: 0.8rem; border: none; }
+.seo-desc { font-size: 0.85rem; line-height: 1.6; color: #444; margin-bottom: 0.5rem; }
+.vonote { background: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.vonote ul { list-style: none; font-size: 0.92rem; line-height: 1.8; color: #444; }
+.meta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.meta-tag { background: #e8ecf4; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; }
+.meta-tag.style { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+footer { margin-top: 3rem; text-align: center; font-size: 0.85rem; color: #999; padding: 1rem 0; }
+@media (max-width: 700px) { .seo-grid { grid-template-columns: 1fr; } .img-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Why Your Brain Treats Credit Card Money Differently</h1>
+<div class="subtitle">Whiteboard sketching style — Hand-drawn marker animation on whiteboard</div>
+
+<div class="meta-row">
+    <span class="meta-tag">Category: Money Psychology</span>
+    <span class="meta-tag">Est. Length: ~3-4 min</span>
+    <span class="meta-tag style">Style: Whiteboard Sketching</span>
+    <span class="meta-tag">Scenes: 8</span>
+    <span class="meta-tag">Images: 24</span>
+    <span class="meta-tag">Video Prompts: 24</span>
+</div>
+
+<!-- SCENE 01 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 01</span>
+        <span class="scene-desc">Handing over cash vs. swiping a card — two completely different feelings</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Think about the last time you paid for something with cash. You pulled out a $50 bill. You looked at it. You handed it over. And it was gone. Now think about the last time you swiped a credit card. You tapped a piece of plastic against a machine. No weight. No loss. No moment of goodbye. Same purchase. Completely different feeling. And that difference is costing you thousands.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Side-by-side comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, split screen with a hand-drawn vertical divider line, left side shows a hand holding a $50 bill drawn in green marker with a sad face doodle on the bill and a grey "GONE" scribble with hand-drawn fade lines, right side shows a hand holding a credit card drawn in blue marker tapping a terminal with a neutral expression on the card and a small "ding" doodle in green marker with sparkle scribbles, a round-faced character drawn in sketch style in the center looking left with pain and right with calm, thick black marker outlines with hand-drawn wobble, marker color accents black green blue grey red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Cash pain visualization</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, close-up of a hand drawn in sketch style holding a $50 bill in green marker with a hand-drawn crack or tear through the middle of the bill, a red marker lightning bolt labeled "pain" shooting from the bill toward a brain doodle on the left that has a wincing expression with scribble sweat drops, thick black marker outlines with hand-drawn wobble, marker color accents black green red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Card tap indifference</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, close-up of a credit card drawn in blue marker touching a card terminal drawn in grey marker sketch lines, a "ding" text scribble in green marker with a small checkmark doodle, the brain on the right side drawn in sketch style with a neutral expression and a "zzz" bubble in blue marker showing it's asleep, a round-faced character silhouette drawn in sketch style floating between with a shrug expression, thick black marker outlines with hand-drawn wobble, marker color accents black blue green grey</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Split comparison animation</div>
+            <div class="text">Left side $50 bill fades from green to grey with crack lines spreading across it like breaking glass in marker scribble effect, right side card tap produces a gentle green checkmark pulse with sparkle scribbles, character head turns slowly left to right with sketch wobble animation showing pain then calm, 5-second smooth motion with hand-drawn feel, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Cash pain animation</div>
+            <div class="text">Lightning bolt draws itself in red marker from the cracked bill to the brain with scribble jitter effect, brain winces with sweat drops appearing one by one in blue marker with hand-drawn wobble, bill crack pulses with subtle tear animation, 4-second sudden motion with marker stroke effect, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Card indifference animation</div>
+            <div class="text">Card gently taps terminal with a subtle bounce and "ding" appears with green marker scribble animation, brain stays calm with "zzz" bubble pulsing slowly with hand-drawn wobble, character shrugs subtly with sketch motion lines, 4-second gentle motion with ease-in-out, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 02 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 02</span>
+        <span class="scene-desc">The pain of paying — how cash activates the brain's pain center</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Scientists have studied this. When you pay with cash, a part of your brain called the insula activates. That's the same region that lights up when you smell something rotten or feel physical pain. Your brain literally feels the loss of handing over money. It hurts. And that pain acts as a natural brake on spending. But when you use a credit card? The insula stays quiet. No pain. No brake. Just the reward of getting the thing.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Brain scan comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, two large hand-drawn brains side by side, left brain has a glowing red marker area labeled "insula — PAIN" with red zigzag scribble lines radiating outward, below it a hand holding cash with a green bill fading to grey, right brain is completely blank with "NO PAIN" written in blue marker with a smiley face doodle, below it a credit card drawn in blue marker, a round-faced character drawn in sketch style looking at both brains with a realization expression, thick black marker outlines with hand-drawn wobble, marker color accents black red grey green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Pain brake metaphor</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn car labeled "Spending" with a character inside drawn in sketch style, on the left path the car has a large hand-drawn brake pedal labeled "Cash Pain" in red marker with a foot pressing it hard and stopping the car with scribble skid marks, on the right path the same car is speeding forward with no brake pedal and only a small credit card drawn in blue marker on the floor, road signs show "STOP" on the left and "GO" on the right, thick black marker outlines with hand-drawn wobble, marker color accents black red green blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Insula spotlight close-up</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, close-up of a hand-drawn brain profile with a spotlight circle drawn in yellow marker highlight around the insula region, a hand-drawn arrow in red marker pointing to it labeled "PAIN CENTER" with scribble emphasis underline, on the left a $20 bill in green marker with a red X through it turned grey, on the right a credit card in blue marker with a green checkmark, small character silhouette drawn in sketch style at the bottom with lightbulb above head in green marker, thick black marker outlines with hand-drawn wobble, marker color accents black yellow red green blue grey</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Brain scan animation</div>
+            <div class="text">Left brain's insula area glows red with pulsating scribble effect radiating pain lines, cash hand fades from green to grey with marker eraser animation, right brain stays calm blue with no activation, character's expression shifts to realization with sketch animation, 5-second contrast animation with hand-drawn feel, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Brake metaphor animation</div>
+            <div class="text">Car on left screeches to a halt with marker skid lines drawing in red, brake pedal presses down with hand-drawn wobble, car on right cruises forward smoothly with no brake present, character inside looks relieved on right side, 5-second motion with bounce easing on the stop, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Insula spotlight animation</div>
+            <div class="text">Yellow marker spotlight slowly circles the insula area with hand-drawn wobble, red arrow draws itself pointing to the region with scribble motion, $20 bill fades to grey while credit card stays bright blue with checkmark pulsing, 4-second reveal with marker stroke effect, one-time with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 03 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 03</span>
+        <span class="scene-desc">The decoupling effect — credit cards separate spending from the feeling of loss</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        This is called the "decoupling effect." When you use a credit card, the act of paying and the act of losing money are separated in time. You buy something today, but you feel the financial impact weeks later when the bill arrives. Your brain doesn't connect the two events. So you spend more because the pain signal arrives too late to stop you. It's like eating a whole cake and feeling full the next morning — the warning system failed.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Time delay illustration</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a horizontal hand-drawn timeline across the middle with three marker scribble points, point 1 labeled "BUY" in green marker with a character drawn in sketch style happily swiping a card with sparkle doodles, point 2 labeled "..." in grey marker with a clock doodle, point 3 labeled "BILL ARRIVES" in red marker with a character crying with hand-drawn tears over a large bill with dollar signs, a long dashed arrow in blue marker connecting point 1 to point 3 labeled "Days Later" in scribble text, thick black marker outlines with hand-drawn wobble, marker color accents black green grey red blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Cake metaphor</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn character in sketch style shown twice, top panel shows the character eating an entire cake drawn in marker with a blissful face and sparkle doodles labeled "TODAY — feels good", bottom panel shows the same character the next morning holding their stomach with a pained green face and scribble groan lines labeled "TOMORROW — regrets", between them a hand-drawn credit card with a red marker arrow going from top to bottom, thick black marker outlines with hand-drawn wobble, marker color accents black green red blue grey</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Broken connection brain visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn brain split into two disconnected halves with a zigzag crack drawn in red marker between them, left half has a credit card doodle labeled "SPENDING" in green, right half has a wallet icon with money flying out labeled "LOSS" in grey, the crack has a hand-drawn "X" and "No Connection" written in blue marker scribble between them, a small character drawn in sketch style at the bottom holding the two halves trying to push them together with scribble effort lines, thick black marker outlines with hand-drawn wobble, marker color accents black red green grey blue</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Timeline animation</div>
+            <div class="text">Dashed arrow draws itself slowly from "BUY" to "BILL ARRIVES" with marker stroke reveal, character at "BUY" is happy with sparkles fading, character at "BILL ARRIVES" appears with tears drawing in blue marker, clock doodle ticks with hand-drawn wobble, 6-second sequential reveal with timeline feel, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Cake metaphor animation</div>
+            <div class="text">Top character eats cake with sparkle doodles and blissful animation, then the scene shifts down with a gentle push to the bottom character holding stomach with groan scribble lines appearing one by one, credit card floats between with red arrow pulsing, 5-second transition animation with hand-drawn sketch feel, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Broken brain animation</div>
+            <div class="text">Zigzag crack between brain halves pulses red with marker scribble glow, left side credit card pulses green while right side wallet fades to grey with money flying out subtly, character pushes the halves with subtle hand-drawn effort wobble, 4-second disconnected feel with hand-drawn jitter, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 04 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 04</span>
+        <span class="scene-desc">How credit card rewards hijack the brain's reward system</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        And here's where it gets even more clever. Credit card companies add rewards — points, cash back, miles — to every transaction. So now your brain gets a small dopamine hit every time you swipe. You're not just spending. You're "earning" rewards. The credit card has flipped the psychology. Instead of feeling the pain of loss, you feel the pleasure of gain. And you start spending more just to chase the points.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Rewards dopamine cycle</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a circular hand-drawn cycle with marker arrows going clockwise, top section shows a credit card swiping with a sparkle doodle, right section shows a brain with yellow marker dopamine drops and a happy face labeled "Reward Hit", bottom section shows a character drawn in sketch style reaching for the card again with eager wide eyes, left section shows a pile of points badges with green checkmarks, all connected by hand-drawn arrows with "MORE" scribbled in red marker, thick black marker outlines with hand-drawn wobble, marker color accents black green yellow red blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Shopping for points addiction</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a round-faced character drawn in sketch style holding multiple shopping bags with a manic happy expression and dollar sign pupils, thought bubble above shows a credit card with wings labeled "2% CASH BACK" in green marker and a glowing points badge, the floor beneath is covered in small items with price tag doodles, one corner has a small rational version of the character drawn in sketch style waving a red flag labeled "Stop" in red marker, thick black marker outlines with hand-drawn wobble, marker color accents black green yellow red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Brain chemistry flip</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn brain showing two pathways, a faded grey arrow labeled "Old: Spend → Pain" with a red X through it in marker, a bright green arrow labeled "New: Spend → Reward" with a sparkle doodle and a dopamine drop in yellow marker, a credit card drawn in blue marker at the start of the green arrow with a smiley face, the character drawn in sketch style beside it giving a thumbs up with a hypnotized swirl in the eyes drawn in black marker, thick black marker outlines with hand-drawn wobble, marker color accents black green red yellow blue grey</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Cycle animation</div>
+            <div class="text">Circular arrows rotate with marker stroke draw effect cycling through each stage, dopamine drops fall into brain with yellow scribble pulse, character reaches eagerly for card with subtle hand-drawn grab animation, "MORE" text pulses red with wobble emphasis, 5-second loop animation with continuous rotation, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Shopping addiction animation</div>
+            <div class="text">Shopping bags multiply with sketch animation, thought bubble shows glowing points with pulse effect, rational small character waves red flag with scribble motion, dollar sign pupils rotate with hypnotic wobble, 5-second buildup animation with hand-drawn jitter, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Brain flip animation</div>
+            <div class="text">Red X draws itself across the grey "Spend → Pain" arrow with marker scribble, green "Spend → Reward" arrow draws itself with a bright marker stroke revealing dopamine drops, character's hypnotized swirl eyes rotate slowly with hand-drawn wobble, 4-second transition with reveal effect, one-time with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 05 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 05</span>
+        <span class="scene-desc">The data — how much more people spend with credit cards vs cash</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        The data backs this up. Studies show that people spend between 50% and 100% more when using a credit card compared to cash. Think about that. The same person, the same store, the same item — but when they swipe instead of using cash, they're willing to pay almost double. You're not imagining it. You're not bad with money. Your brain is responding exactly the way it was designed to. And the credit card companies know it.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Bar chart comparison</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn bar chart with two bars, left bar labeled "Cash" in green marker at height 50 with the number "50" scribbled on top, right bar labeled "Credit Card" in red marker towering at height 100 with the number "100" in bold red marker and a circled emphasis, a round-faced character drawn in sketch style standing between the bars looking up at the credit card bar with a shocked expression and hand-drawn sweat drops, percentage sign doodles floating around, thick black marker outlines with hand-drawn wobble, marker color accents black green red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Same person, different totals</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, the same round-faced character drawn in sketch style shown twice side by side, left version labeled "Cash" holding a $50 bill and a small receipt with "$50" scribbled in green, right version labeled "Credit Card" holding a credit card in blue marker and a very long receipt trailing down with "$100" circled in red marker at the bottom, both versions looking at each other's receipts with confused expressions, hand-drawn "Same Person?" question in blue marker between them, thick black marker outlines with hand-drawn wobble, marker color accents black green blue red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Credit card company knowing smile</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a large hand-drawn credit card with a sly smiley face drawn in blue marker and dollar sign eyes, behind it a shadowy corporate building doodle, in front a small round-faced character drawn in sketch style handing over their wallet with a naive smile while the credit card reaches for it with a tiny hand-drawn arm, above the card a thought bubble showing piles of money and the text "We know." in green marker with a wink scribble, thick black marker outlines with hand-drawn wobble, marker color accents black blue green red</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Bar chart animation</div>
+            <div class="text">Cash bar draws up to 50 with green marker fill, then credit card bar shoots up to 100 with red marker stroke effect surpassing the first, character's expression shifts from calm to shocked with jaw-drop sketch animation, sweat drops appear with blue marker drip, 4-second reveal with bounce on the taller bar, one-time with hold</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Double total animation</div>
+            <div class="text">Left receipt stays short with green marker, right receipt scrolls down with red marker drawing each item, both characters look at each other's receipts with head-turning sketch animation, "Same Person?" question appears with blue marker scribble, 5-second comparison with hand-drawn wobble, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Credit card smirk animation</div>
+            <div class="text">Credit card's sly smile slowly widens with creepy sketch animation, dollar sign eyes blink with marker scribble effect, character hands over wallet with subtle reach motion, "We know." text appears with green marker stroke, 5-second creepy realization with hand-drawn jitter, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 06 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 06</span>
+        <span class="scene-desc">The mental trick — making credit card feel like cash</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        So what do you do about it? The fix isn't to stop using credit cards. They're useful — better fraud protection, rewards, credit building. But you need to reconnect the pain signal. Here's the simplest trick: every time you make a credit card purchase, immediately transfer that amount from your checking account to a separate savings account. Or mentally subtract it from your balance right there in the store. Force your brain to feel the loss at the moment of purchase.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Phone transfer action</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn smartphone showing a bank app screen with "Transfer $35 to Savings" written in green marker scribble and a finger pressing the confirm button drawn in sketch style, beside the phone a credit card and a receipt with "$35" circled in red marker, a round-faced character drawn in sketch style giving a determined nod with a small brain above showing a connected pathway between the card and the savings with a green checkmark, thick black marker outlines with hand-drawn wobble, marker color accents black green red blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Mental subtraction at store</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a round-faced character drawn in sketch style standing in a store aisle holding an item and looking at the price tag showing "$45", a thought bubble shows a simple equation scribbled in marker "$300 - $45 = $255" with the result circled in green marker, the character's expression shows satisfaction with a small smile and hand-drawn lightbulb above head in yellow marker, the credit card in hand is shown with a small chain connecting it to a brain doodle labeled "NOW" in blue marker, thick black marker outlines with hand-drawn wobble, marker color accents black green red blue yellow</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Pain reconnection bridge</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn bridge with "Instant Transfer" written on it in green marker, starting from a credit card on one side labeled "Spend Now" in blue marker and crossing to a wallet on the other side labeled "Feel Now" in red marker with a brain receiving a small pain zap in yellow marker lightning bolt, a round-faced character drawn in sketch style walking across the bridge confidently with a toolbox labeled "The Fix" in green marker, thick black marker outlines with hand-drawn wobble, marker color accents black green blue red yellow</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Phone transfer animation</div>
+            <div class="text">Finger presses the confirm button with a subtle tap animation and green glow, transfer text appears with marker stroke reveal, character gives a determined nod with sketch motion, brain connection pathway draws itself between card and savings with green checkmark pulsing, 4-second action with confirmation feel, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Mental math animation</div>
+            <div class="text">Equation writes itself in marker stroke one number at a time, result gets circled with green marker circle, lightbulb above head fades in with yellow scribble glow, chain between card and brain tightens with subtle sketch animation, 5-second thoughtful motion with hand-drawn wobble, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Bridge animation</div>
+            <div class="text">Bridge draws itself from credit card side to wallet side with green marker stroke, character walks across with confident step animation and hand-drawn motion lines, brain receives a small yellow zap pulse at the end showing reconnected pain signal, 5-second crossing motion with ease-in-out, one-time with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 07 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 07</span>
+        <span class="scene-desc">Additional strategies — cash envelope system and spending categories</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        Another powerful method is the cash envelope system for your most dangerous spending categories. Take out cash for things like eating out, entertainment, and shopping. When the cash is gone, the spending stops. No exceptions. For everything else, use the card. But for the categories where you know you overspend, make it physical. Make it hurt. Your brain needs that friction to make good decisions. Remove the friction, and you remove the brake.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Cash envelope system</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a row of hand-drawn envelopes labeled in marker scribble — "Dining Out" in red, "Shopping" in blue, "Entertainment" in green — each with cash doodles sticking out, the first envelope is full, the second is half empty, the third is empty with a red marker X, a round-faced character drawn in sketch style holding the empty envelope with a shrug and a small smile, beside the envelopes a credit card in blue marker with a "for bills only" label in green marker, thick black marker outlines with hand-drawn wobble, marker color accents black red blue green</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Friction visual metaphor</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a hand-drawn road with a car labeled "Spending" approaching a fork, left path has hand-drawn speed bumps labeled "Cash Friction" in red marker with a character drawn in sketch style driving slowly and carefully, right path is a smooth slide labeled "Card Smooth" in green marker with the same character sliding uncontrollably fast with a panicked expression and dollar signs flying out of the car, a warning sign at the fork drawn in yellow marker, thick black marker outlines with hand-drawn wobble, marker color accents black red green blue yellow</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Before/after spending control</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, split screen with a hand-drawn divider, left side shows a chaotic scene labeled "Before" in red marker with the character drawn in sketch style surrounded by receipts, takeout boxes, shopping bags with a stressed expression and a shrinking wallet, right side labeled "After" in green marker shows the same character relaxed with three neat envelopes on a table and a growing piggy bank doodle with a smiley face and a "+35%" label in green marker, thick black marker outlines with hand-drawn wobble, marker color accents black red green</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Envelope system animation</div>
+            <div class="text">Cash slides into envelopes one by one with marker stroke motion, first envelope fills up green, second half fills, third shows empty with red X drawing across it, character holds empty envelope with subtle shrug animation, 5-second sequential with hand-drawn wobble, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Friction fork animation</div>
+            <div class="text">Car on left hits speed bumps with bounce and slow wobble animation, car on right slides uncontrollably with dollar signs flying off with marker scribble effect, character on right has panicked expression changing with sketch animation, warning sign pulses yellow, 5-second contrast animation with bounce easing, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Transformation animation</div>
+            <div class="text">Left side chaos has receipts and bags swirling with chaotic scribble animation, scene transitions with a wipe effect to the right side where envelopes sit neatly and piggy bank slowly grows with "+35%" appearing in green marker stroke, character's expression shifts from stressed to calm, 5-second morph transition with hand-drawn feel, one-time with hold</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCENE 08 -->
+<div class="scene">
+    <div class="scene-header">
+        <span class="scene-num">SCENE 08</span>
+        <span class="scene-desc">Closing — awareness is the real fix</span>
+    </div>
+    <div class="voiceover">
+        <div class="voiceover-label">Voiceover</div>
+        The goal isn't to never use credit cards. The goal is to use them without your ancient brain wiring making the decisions for you. Every time you spend, ask yourself: would I still buy this if I had to hand over cash right now? If the answer is no, that's your cue. Not because you can't afford it. But because the system is working exactly as designed. And now, so is your awareness. That awareness is worth more than any rewards point.
+    </div>
+    <div class="prompt-label image">Image Prompts (3)</div>
+    <div class="img-grid">
+        <div class="img-item">
+            <div class="label">Prompt A — Empowered character with cash question</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a round-faced character drawn in sketch style standing confidently holding a credit card in one hand and a $50 bill in the other, looking at the $50 bill with a thoughtful expression and a small smile, thought bubble shows the question "Would I pay cash for this?" in blue marker with a hand-drawn arrow from the thought to the card, around the character small faded icons of impulse items with red X marks, a lightbulb above the head in green marker with sparkle doodles, thick black marker outlines with hand-drawn wobble, marker color accents black green blue red</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt B — Awareness shield metaphor</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a round-faced character drawn in sketch style standing behind a large hand-drawn shield labeled "Awareness" in green marker with a brain icon on it, facing a barrage of small arrows labeled "Dopamine", "Decoupling", "Rewards", "Frictionless", "Points" drawn in red and grey marker bouncing off the shield, the character looks calm with a knowing smile and a hand raised in a confident gesture, a credit card drawn in blue marker floating safely inside the shield area, thick black marker outlines with hand-drawn wobble, marker color accents black green red grey blue</div>
+        </div>
+        <div class="img-item">
+            <div class="label">Prompt C — Final balance visual</div>
+            <div class="text">whiteboard sketching style, hand-drawn marker illustration on clean whiteboard background, a balanced scale with a credit card on one side and a brain on the other side in perfect equilibrium drawn in green marker with a checkmark, above the scale "Control" written in blue marker with underline scribble, the round-faced character drawn in sketch style standing beside the scale with arms crossed and a satisfied nod, behind them a rising sun drawn in yellow marker sketch lines labeled "Awareness" with warm glow scribble effect, thick black marker outlines with hand-drawn wobble, marker color accents black green blue yellow grey</div>
+        </div>
+    </div>
+    <div class="prompt-label video">AI Video Prompts (3)</div>
+    <div class="img-grid">
+        <div class="vid-item">
+            <div class="label">Video A — Cash question animation</div>
+            <div class="text">Character looks from card to cash with subtle head turn sketch animation, thought bubble question writes itself in blue marker with hand-drawn arrow pointing to card, impulse items fade in with red X marks drawing across them, lightbulb fades in with green sparkle pulse, 5-second thoughtful motion with hand-drawn wobble, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video B — Shield animation</div>
+            <div class="text">Arrows fly toward the shield one by one with marker stroke motion lines and bounce off with scribble deflection effect, character stands calm with subtle confident nod, shield glows green with gentle pulse when arrows hit, credit card floats safely inside with blue marker glow, 6-second defense action with bounce easing, seamless loop</div>
+        </div>
+        <div class="vid-item">
+            <div class="label">Video C — Balance animation</div>
+            <div class="text">Scale tips gently then settles into perfect balance with hand-drawn wobble, "Control" appears in blue marker with underline stroke, character gives a satisfied nod with sketch animation, sun behind rises with yellow marker glow effect radiating outward, 5-smooth settling motion with calm feel, seamless loop</div>
+        </div>
+    </div>
+</div>
+
+<!-- THUMBNAIL -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">Thumbnail <span class="badge gold">Video 06</span></div>
+    <div class="thumbnail-box">
+        <div class="label gold">Thumbnail Idea</div>
+        <p style="margin:0.3rem 0 0.8rem; color:#444; font-size:0.95rem;">Whiteboard-style close-up of a brain split into two halves — one side connected to a $50 cash bill with a red "PAIN" lightning bolt, the other side connected to a credit card with a smooth green arrow and a smiling face. The round-faced character in the center looking confused between the two. Clean whiteboard background with marker smudge effects.</p>
+        <div class="label blue">Thumbnail Text</div>
+        <p style="margin:0.3rem 0 0.8rem; font-size:1.3rem; font-weight:700; color:#0f3460;">"YOUR BRAIN ON CREDIT"</p>
+        <div class="label gold">AI Image Prompt</div>
+        <div class="prompt-box">whiteboard sketching style thumbnail, hand-drawn marker illustration on whiteboard background, a round-faced character drawn in sketch style standing centered looking confused with raised eyebrows and a hand on chin, on the left a hand-drawn $50 bill in green marker with a red lightning bolt labeled "PAIN" shooting to the left half of a brain with a wincing expression, on the right a credit card in blue marker with a smooth green arrow labeled "NO PAIN" feeding into the right half of the same brain with a happy smile, the brain is split down the middle with a zigzag crack drawn in black marker, marker smudge effects on the whiteboard, clean composition with space for bold text overlay at the top, thick black marker outlines with hand-drawn wobble, color palette black marker whiteboard green red blue accents</div>
+    </div>
+</div>
+
+<!-- SEO -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">SEO <span class="badge gold">Video 06</span></div>
+    <div class="seo-grid">
+        <div class="seo-card">
+            <h3>Title Options</h3>
+            <ul>
+                <li>Why Your Brain Treats Credit Card Money Differently (Neuroscience Explained)</li>
+                <li>The Real Reason You Spend More With Credit Cards — It's Not Willpower</li>
+                <li>How Credit Cards Hack Your Brain's Pain Center</li>
+                <li>Why Cash Hurts and Credit Cards Don't — The Psychology of Spending</li>
+                <li>The Neuroscience Behind Why You Overspend With Plastic</li>
+            </ul>
+        </div>
+        <div class="seo-card">
+            <h3>Description</h3>
+            <div class="seo-desc">When you pay with cash, your brain's pain center lights up. When you swipe a credit card, it stays silent. That difference is costing you thousands. In this video, we break down the neuroscience of why your brain treats credit card money completely differently from cash, the decoupling effect that separates spending from the feeling of loss, and how rewards programs are designed to hijack your dopamine system.</div>
+            <div class="seo-desc">You'll learn the simple mental tricks to reconnect the pain signal, the cash envelope system for dangerous spending categories, and how to use credit cards without your ancient brain wiring making the decisions for you. This isn't about willpower — it's about understanding how your brain works.</div>
+        </div>
+        <div class="seo-card tags">
+            <h3>Tags (30)</h3>
+            <ul>
+                <li>credit card psychology</li><li>brain on credit cards</li><li>why credit cards make you spend more</li><li>pain of paying</li><li>cash vs credit brain</li><li>neuroscience spending</li><li>credit card rewards trap</li><li>decoupling effect</li><li>money psychology</li><li>spending habits</li><li>personal finance</li><li>financial psychology</li><li>behavioral finance</li><li>impulse spending</li><li>credit card debt</li><li>how to stop overspending</li><li>insula brain spending</li><li>credit card tricks</li><li>mindful spending</li><li>cash envelope system</li><li>budgeting tips</li><li>financial education</li><li>money mindset</li><li>consumer psychology</li><li>credit card addiction</li><li>spending triggers</li><li>financial literacy</li><li>brain chemistry money</li><li>retail therapy</li><li>smart spending habits</li>
+            </ul>
+        </div>
+        <div class="seo-card">
+            <h3>Keywords (15)</h3>
+            <ul>
+                <li>credit card brain psychology</li><li>why credit cards feel painless</li><li>cash vs credit card spending</li><li>pain of paying neuroscience</li><li>insula brain spending</li><li>decoupling effect credit cards</li><li>credit card rewards manipulation</li><li>how to spend less on credit cards</li><li>behavioral finance credit cards</li><li>money psychology explained</li><li>credit card spending habits</li><li>neuroscience of money</li><li>cash envelope budgeting</li><li>mindful credit card use</li><li>financial psychology 2025</li>
+            </ul>
+        </div>
+        <div class="seo-card" style="grid-column: span 2;">
+            <h3>Hashtags (7)</h3>
+            <ul>
+                <li>#CreditCardPsychology</li><li>#MoneyMindset</li><li>#NeuroscienceOfMoney</li><li>#PersonalFinance</li><li>#SpendingHabits</li><li>#BehavioralFinance</li><li>#FinancialEducation</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- VOICEOVER NOTES -->
+<div style="margin-top:1.5rem;">
+    <div class="section-header">AI Voiceover Notes <span class="badge gold">Video 06</span></div>
+    <div class="vonote">
+        <ul>
+            <li><strong>Tone:</strong> Conversational, eye-opening, slightly playful at the start, shifts to educational during neuroscience section, empowering at the solution</li>
+            <li><strong>Pace:</strong> Moderate with pauses after key reveals ("the insula stays quiet", "decoupling effect", "50% to 100% more"), speed up slightly on the data section, slow down on the solution strategies</li>
+            <li><strong>Emphasis:</strong> "insula", "pain", "decoupling", "50% to 100% more", "dopamine hit", "would I pay cash?", "awareness"</li>
+            <li><strong>Duration:</strong> ~950 words at 150 wpm = ~6 minutes (with pauses, est. 3-4 min final video)</li>
+        </ul>
+    </div>
+</div>
+
+<div style="margin-top:1.5rem; padding:1rem; background:#fff3cd; border-radius:8px; border-left:4px solid #ffc107;">
+    <strong style="color:#856404;">Generated using <code>upcoming_video_instructions.md</code></strong>
+    <p style="color:#856404; font-size:0.85rem; margin-top:0.3rem;">8 scenes · 1 voiceover + 3 image prompts + 3 AI video prompts per scene · Total: 24 images · 24 video prompts · Whiteboard sketching style</p>
+</div>
+
+<footer>MoneyMuse &mdash; Finance explained simply through animation &bull; Generated via upcoming_video_instructions.md</footer>
+
+</div>
+</body>
+</html>
